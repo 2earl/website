@@ -1,0 +1,23 @@
+{
+  "name": "@2earl/website",
+  "version": "0.0.0",
+  "private": true,
+  "description": "2earl.com: public site with the privacy policy, terms and imprint for all 2earl services",
+  "license": "AGPL-3.0-only",
+  "type": "module",
+  "packageManager": "pnpm@10.28.0",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "dev": "wrangler dev",
+    "lint": "html-validate \"public/**/*.html\" && prettier --check . && node scripts/check-links.mjs",
+    "format": "prettier --write .",
+    "build": "wrangler deploy --dry-run --outdir dist"
+  },
+  "devDependencies": {
+    "html-validate": "11.18.0",
+    "prettier": "3.9.10",
+    "wrangler": "4.158.0"
+  }
+}
