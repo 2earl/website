@@ -1,0 +1,18 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "website",
+  "compatibility_date": "2026-11-01",
+
+  // Static files only; no Worker code runs.
+  "assets": {
+    "directory": "./public",
+    "html_handling": "drop-trailing-slash",
+    "not_found_handling": "404-page",
+  },
+
+  // Served only on the apex domain. Wrangler attaches the custom domain and creates its DNS
+  // record and certificate on deploy.
+  "routes": [{ "pattern": "2earl.com", "custom_domain": true }],
+  "workers_dev": false,
+  "preview_urls": false,
+}
