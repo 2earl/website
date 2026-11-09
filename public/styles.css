@@ -1,22 +1,51 @@
+/*
+ * 2earl.com
+ * Same identity as login.2earl.com: the panel is the 2earl mark extended to the height of the
+ * screen, its four facets cut at 45°. That is the one bold element; the rest stays neutral so the
+ * brand colours carry the page. Tokens match login.2earl.com's app.css.
+ */
+
+@font-face {
+  font-family: 'Readex Pro';
+  src: url('/fonts/readex-pro-latin.woff2') format('woff2');
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-  --bg: #fbfaf8;
-  --fg: #1d1c1a;
-  --muted: #5f5b55;
-  --rule: #e4e0da;
-  --link: #1f4fbf;
-  --link-visited: #5b3ba8;
-  --max: 42rem;
   color-scheme: light dark;
+
+  /* The mark's four facets */
+  --red: #ed1c24;
+  --vermilion: #f15a24;
+  --orange: #f7931e;
+  --amber: #fbb03b;
+
+  /* Light scheme (text pairs checked for WCAG AA) */
+  --bg: #f7f7f8;
+  --fg: #1c1b1f;
+  --muted: #5c5a60; /* 6.4:1 on --bg */
+  --rule: #e2e1e5;
+  --link: #b23a0c; /* 5.6:1 on --bg */
+  --focus: #b23a0c;
+  --surface: #ffffff;
+
+  --display: 'Readex Pro', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --body: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+
+  accent-color: var(--vermilion);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #151514;
-    --fg: #ecebe8;
-    --muted: #a8a49d;
-    --rule: #2e2d2a;
-    --link: #8fb0ff;
-    --link-visited: #c0a8ff;
+    --bg: #141315;
+    --fg: #f2f1f3;
+    --muted: #a19fa6; /* 7.1:1 */
+    --rule: #2c2a2f;
+    --link: #fbb03b; /* 10:1 */
+    --focus: #fbb03b;
+    --surface: #1c1b1f;
   }
 }
 
@@ -33,131 +62,470 @@ html {
 
 body {
   margin: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
   background: var(--bg);
   color: var(--fg);
-  font:
-    1.0625rem/1.65 system-ui,
-    -apple-system,
-    'Segoe UI',
-    Roboto,
-    sans-serif;
-}
-
-.wrap {
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 2.5rem 1rem 4rem;
-}
-
-header.site {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 1rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid var(--rule);
-  margin-bottom: 2rem;
-}
-
-header.site a.brand {
-  font-weight: 700;
-  font-size: 1.25rem;
-  letter-spacing: -0.01em;
-  color: var(--fg);
-  text-decoration: none;
-}
-
-h1 {
-  font-size: 1.9rem;
-  line-height: 1.2;
-  letter-spacing: -0.015em;
-  margin: 0 0 0.25rem;
-}
-
-h2 {
-  font-size: 1.2rem;
-  margin: 2.25rem 0 0.5rem;
-}
-
-h3 {
-  font-size: 1.02rem;
-  margin: 1.5rem 0 0.25rem;
-}
-
-p,
-ul,
-ol,
-table {
-  margin: 0 0 1rem;
-}
-
-ul,
-ol {
-  padding-left: 1.25rem;
-}
-
-li + li {
-  margin-top: 0.25rem;
+  font: 1rem/1.65 var(--body);
 }
 
 a {
   color: var(--link);
-  text-underline-offset: 0.15em;
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1px;
 }
 
-a:visited {
-  color: var(--link-visited);
+a:hover {
+  text-decoration-thickness: 2px;
 }
 
-.meta {
-  color: var(--muted);
-  font-size: 0.95rem;
-  margin-bottom: 2rem;
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 4px;
 }
 
-address {
-  font-style: normal;
-  margin: 0 0 1rem;
+/* ---- Frame: the mark panel + content ------------------------------------------------------ */
+
+.frame {
+  display: grid;
+  min-height: 100vh;
+  min-height: 100dvh;
+  grid-template-columns: minmax(15rem, 34%) 1fr;
 }
 
-.table-scroll {
-  overflow-x: auto;
-  margin: 0 0 1rem;
+/*
+ * The mark, extended: the V-notch at the top is as deep as half the panel's width, the two
+ * upper facets run down as bands, and the two lower facets meet at the bottom centre, all at
+ * 45° as in the icon. Container units keep the angles true at any size. Sticky, so it stays in
+ * view beside long legal pages.
+ */
+.panel {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100dvh;
+  container-type: size;
+  overflow: hidden;
 }
 
-table {
-  border-collapse: collapse;
-  width: 100%;
-  font-size: 0.95rem;
+.facet {
+  position: absolute;
+  inset: 0;
 }
 
-th,
-td {
-  text-align: left;
-  vertical-align: top;
-  padding: 0.5rem 0.75rem 0.5rem 0;
-  border-bottom: 1px solid var(--rule);
+.facet-vermilion {
+  background: var(--vermilion);
+  /* 1px past the centre so no hairline of the page shows between the two bands. */
+  clip-path: polygon(0 0, calc(50cqw + 1px) calc(50cqw + 1px), calc(50cqw + 1px) 100cqh, 0 100cqh);
 }
 
-th {
+.facet-orange {
+  background: var(--orange);
+  clip-path: polygon(100cqw 0, 50cqw 50cqw, 50cqw 100cqh, 100cqw 100cqh);
+}
+
+.facet-red {
+  background: var(--red);
+  clip-path: polygon(0 calc(100cqh - 50cqw), 50cqw 100cqh, 0 100cqh);
+}
+
+.facet-amber {
+  background: var(--amber);
+  clip-path: polygon(100cqw calc(100cqh - 50cqw), 50cqw 100cqh, 100cqw 100cqh);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 2.5rem clamp(1.25rem, 6vw, 5.5rem) 2rem;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  align-self: flex-start;
+  color: var(--fg);
+  text-decoration: none;
+}
+
+.brand svg {
+  width: 2.25rem;
+  height: 2.25rem;
+  flex: none;
+}
+
+.brand-name {
+  font-family: var(--display);
   font-weight: 600;
+  font-size: 1.5rem;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.brand-sub {
+  padding-left: 0.75rem;
+  border-left: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 0.9375rem;
+  line-height: 1.5rem;
+}
+
+.main {
+  width: 100%;
+  padding: 3rem 0;
 }
 
 footer.site {
-  margin-top: 3rem;
-  padding-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  margin-top: auto;
+  padding-top: 1.25rem;
   border-top: 1px solid var(--rule);
   color: var(--muted);
-  font-size: 0.92rem;
+  font-size: 0.875rem;
 }
 
 footer.site nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem 1.25rem;
+  gap: 0.25rem 1.25rem;
 }
 
-footer.site a,
-footer.site a:visited {
+footer.site a {
   color: var(--muted);
+}
+
+footer.site a[aria-current='page'] {
+  color: var(--fg);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+footer.site p {
+  margin: 0;
+}
+
+/* ---- Type ---------------------------------------------------------------------------------- */
+
+h1,
+h2,
+h3 {
+  font-family: var(--display);
+  font-weight: 500;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: clamp(1.875rem, 3.4vw, 2.5rem);
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  margin: 0 0 0.75rem;
+}
+
+.lede {
+  margin: 0 0 2.5rem;
+  color: var(--muted);
+  font-size: 1.125rem;
+  text-wrap: pretty;
+}
+
+/* ---- Start page ------------------------------------------------------------------------------ */
+
+.home {
+  max-width: 36rem;
+  margin: auto 0;
+}
+
+.hero {
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  margin-bottom: 1.25rem;
+}
+
+.services {
+  display: grid;
+  gap: 1rem;
+  margin: 0 0 2.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+/* Each service carries one facet colour on its edge: the account vermilion, the gateway orange. */
+.service {
+  position: relative;
+  padding: 1.25rem 1.5rem 1.25rem 1.75rem;
+  border: 1px solid var(--rule);
+  border-radius: 0.75rem;
+  background: var(--surface);
+  overflow: hidden;
+}
+
+.service::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 0.375rem;
+  background: var(--vermilion);
+}
+
+.service-gateway::before {
+  background: var(--orange);
+}
+
+.service-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem 0.75rem;
+  margin-bottom: 0.375rem;
+}
+
+.service h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.3;
+}
+
+.status {
+  padding: 0.0625rem 0.625rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.status-live {
+  background: var(--amber);
+  color: #1c1b1f;
+}
+
+.status-soon {
+  border: 1px solid var(--muted);
+  color: var(--muted);
+}
+
+.service p {
+  margin: 0 0 0.75rem;
+  font-size: 0.9375rem;
+}
+
+.service-link {
+  font-weight: 600;
+  font-size: 0.9375rem;
+}
+
+.service-host {
+  color: var(--muted);
+  font-size: 0.875rem;
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+}
+
+.source h2 {
+  margin: 0 0 0.375rem;
+  font-size: 1.125rem;
+}
+
+.source p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+/* ---- Legal pages ----------------------------------------------------------------------------- */
+
+.prose {
+  max-width: 42rem;
+}
+
+.prose h1 {
+  margin-bottom: 0.25rem;
+}
+
+.meta {
+  margin: 0 0 2rem;
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+.toc {
+  margin: 0 0 2.5rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--rule);
+  border-radius: 0.75rem;
+  background: var(--surface);
+  font-size: 0.9375rem;
+}
+
+.toc h2 {
+  margin: 0 0 0.375rem;
+  font-size: 0.8125rem;
+  font-family: var(--body);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.toc ol {
+  margin: 0;
+  padding-left: 1.25rem;
+  columns: 2 14rem;
+  column-gap: 2rem;
+}
+
+.toc li {
+  break-inside: avoid;
+}
+
+.prose > h2 {
+  margin: 2.5rem 0 0.75rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--rule);
+  font-size: 1.375rem;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  scroll-margin-top: 1rem;
+}
+
+.prose > h3 {
+  margin: 1.75rem 0 0.5rem;
+  font-size: 1.0625rem;
+}
+
+.prose p,
+.prose ul,
+.prose ol,
+.prose address {
+  margin: 0 0 1rem;
+}
+
+.prose ul,
+.prose ol {
+  padding-left: 1.25rem;
+}
+
+.prose li + li {
+  margin-top: 0.375rem;
+}
+
+address {
+  font-style: normal;
+  padding: 0.875rem 1.125rem;
+  border-left: 3px solid var(--vermilion);
+  background: var(--surface);
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.table-scroll {
+  overflow-x: auto;
+  margin: 0 0 1rem;
+  border: 1px solid var(--rule);
+  border-radius: 0.625rem;
+  background: var(--surface);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+
+th,
+td {
+  padding: 0.625rem 0.875rem;
+  border-bottom: 1px solid var(--rule);
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+/* ---- Narrow screens: the mark becomes a four-colour stripe -------------------------------- */
+
+@media (max-width: 52rem) {
+  .frame {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+
+  .panel {
+    position: static;
+    container-type: normal;
+    display: flex;
+    height: 0.375rem;
+  }
+
+  .facet {
+    position: static;
+    flex: 1;
+    clip-path: none;
+  }
+
+  .facet-red {
+    order: 1;
+  }
+
+  .facet-vermilion {
+    order: 2;
+  }
+
+  .facet-orange {
+    order: 3;
+  }
+
+  .facet-amber {
+    order: 4;
+  }
+
+  .content {
+    padding-top: 1.75rem;
+  }
+
+  .main {
+    padding: 2.5rem 0;
+  }
+
+  .home {
+    margin: 0;
+  }
+}
+
+/* ---- Forced colours: keep boundaries visible ------------------------------------------------ */
+
+@media (forced-colors: active) {
+  .panel {
+    display: none;
+  }
+
+  .frame {
+    grid-template-columns: 1fr;
+  }
+
+  .service::before {
+    display: none;
+  }
+}
+
+@media print {
+  .panel,
+  .toc {
+    display: none;
+  }
+
+  .frame {
+    display: block;
+  }
 }

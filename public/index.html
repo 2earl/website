@@ -3,46 +3,86 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
     <title>2earl</title>
     <meta
       name="description"
-      content="2earl builds open-source services. Home of the 2earl account and its legal pages."
+      content="2earl builds open-source services around one account: approve or withdraw every app that wants to act on your behalf."
     />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link
+      rel="preload"
+      href="/fonts/readex-pro-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
     <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
-    <div class="wrap">
-      <header class="site">
-        <a class="brand" href="/">2earl</a>
-      </header>
-
-      <main>
-        <h1>2earl</h1>
-        <p class="meta">Open-source services, built in Berlin.</p>
-
-        <h2>Services</h2>
-        <ul>
-          <li>
-            <a href="https://login.2earl.com">login.2earl.com</a>: the 2earl account. Sign in once
-            and decide which apps may act for you. Not open to the public yet.
-          </li>
-        </ul>
-
-        <h2>Source code</h2>
-        <p>
-          Everything is published under the GNU Affero General Public License v3.0 at
-          <a href="https://github.com/2earl">github.com/2earl</a>.
-        </p>
-      </main>
-
-      <footer class="site">
-        <nav aria-label="Legal">
-          <a href="/privacy">Privacy policy</a>
-          <a href="/terms">Terms of service</a>
-          <a href="/imprint">Imprint</a>
-        </nav>
-      </footer>
+    <div class="frame">
+      <div class="panel" aria-hidden="true">
+        <span class="facet facet-vermilion"></span><span class="facet facet-orange"></span
+        ><span class="facet facet-red"></span><span class="facet facet-amber"></span>
+      </div>
+      <div class="content">
+        <header class="site">
+          <a class="brand" href="/"
+            ><svg viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+              <path fill="#F15A24" d="M0 0 50 50V100L0 50Z" />
+              <path fill="#F7931E" d="M100 0 50 50V100L100 50Z" />
+              <path fill="#ED1C24" d="M0 50 50 100H15A15 15 0 0 1 0 85Z" />
+              <path fill="#FBB03B" d="M100 50V85A15 15 0 0 1 85 100H50Z" /></svg
+            ><span class="brand-name">2earl</span></a
+          >
+        </header>
+        <main class="main home">
+          <h1 class="hero">Decide which apps may act for you.</h1>
+          <p class="lede">
+            2earl builds open-source services around one account: you sign in once, protect it with
+            a passkey, and approve or withdraw every app that wants to act on your behalf.
+          </p>
+          <ul class="services">
+            <li class="service service-account">
+              <div class="service-head">
+                <h2>2earl account</h2>
+                <span class="status status-live">Invite only</span>
+              </div>
+              <p>
+                Sign in with Google, add a passkey or authenticator app, see every connected app and
+                disconnect any of them. Download or delete your data at any time. Stored in the EU.
+              </p>
+              <a class="service-link" href="https://login.2earl.com">Sign in at login.2earl.com</a>
+            </li>
+            <li class="service service-gateway">
+              <div class="service-head">
+                <h2>MCP gateway</h2>
+                <span class="status status-soon">In development</span>
+              </div>
+              <p>
+                Will let AI assistants use tools for you through the Model Context Protocol, only
+                with the access you approve in your 2earl account.
+              </p>
+              <span class="service-host">mcp.2earl.com</span>
+            </li>
+          </ul>
+          <section class="source" aria-labelledby="source-heading">
+            <h2 id="source-heading">Open source</h2>
+            <p>
+              All code is public under the GNU Affero General Public License v3.0, so you can check
+              how your account and data are handled:
+              <a href="https://github.com/2earl">github.com/2earl</a>.
+            </p>
+          </section>
+        </main>
+        <footer class="site">
+          <nav aria-label="Legal">
+            <a href="/privacy">Privacy policy</a><a href="/terms">Terms of service</a
+            ><a href="/imprint">Imprint</a>
+          </nav>
+          <p><a href="https://github.com/2earl">Source code</a> · Berlin</p>
+        </footer>
+      </div>
     </div>
   </body>
 </html>
