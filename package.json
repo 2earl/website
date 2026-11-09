@@ -16,7 +16,7 @@
     "build": "wrangler deploy --dry-run --outdir dist"
   },
   "devDependencies": {
-    "html-validate": "11.18.0",
+    "html-validate": "11.19.0",
     "prettier": "3.9.10",
     "wrangler": "4.158.0"
   }
