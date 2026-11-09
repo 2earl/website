@@ -214,7 +214,11 @@
           <p><strong>Legal basis:</strong> Art. 6(1)(b) GDPR. This data is the service you use.</p>
           <h3>Who can see what</h3>
           <ul>
-            <li>Private prompts: only you.</li>
+            <li>Private prompts: only you, and the people you share them with.</li>
+            <li>
+              Prompts shared with you: you, the author, and the others they shared them with. You
+              see the author’s handle, never their email address.
+            </li>
             <li>
               Public prompts: every signed-in 2earl user, with your handle. Copies they make are
               theirs and stay when you make yours private or delete it.
@@ -224,6 +228,22 @@
               assistants can load them.
             </li>
           </ul>
+          <h3>Sharing a prompt with someone</h3>
+          <p>
+            You can share a private prompt with someone by typing their email address. Prompt share
+            asks login.2earl.com which 2earl account uses that address; login answers with that
+            account’s internal ID only. We store the address you typed, shown only to you, and the
+            account it belongs to. If no account uses the address, we tell you so, which means
+            sharing shows whether an address has a 2earl account. To limit this, after several
+            addresses without an account sharing is paused for a while; we keep a note of those
+            tries for a day. Prompt share does not email the person; they find the prompt under
+            “Shared with you”.
+          </p>
+          <p>
+            <strong>Legal basis:</strong> Art. 6(1)(b) GDPR for sharing, which you ask for; Art.
+            6(1)(f) for looking up the address and for the pause (our legitimate interest in letting
+            people share with each other while preventing people from checking many addresses).
+          </p>
           <p>
             Please don’t put health information, other people’s personal data or passwords and keys
             into prompts or sessions others can see. Prompt share refuses entries that look like
@@ -271,8 +291,10 @@
           <h2 id="apps">6. Apps and assistants you connect</h2>
           <p>
             When you approve an app, it receives an access token for the permissions you approved
-            and an internal user ID. It does not receive your email address or name from us. You can
-            disconnect an app at any time in your account.
+            and an internal user ID. It does not receive your email address or name from us. The one
+            exception within 2earl: Prompt share can ask which account uses an address someone typed
+            to share a prompt with you, and gets only the account’s ID. You can disconnect an app at
+            any time in your account.
           </p>
           <p>
             When an AI assistant uses Prompt share for you, the prompts and session entries it reads
@@ -337,6 +359,14 @@
                 <tr>
                   <td>Prompt share: invitation links</td>
                   <td>7 days, or until used or revoked</td>
+                </tr>
+                <tr>
+                  <td>Prompt share: prompts shared with someone</td>
+                  <td>
+                    Until the author stops sharing, the person removes it from their list, or the
+                    prompt or either account is deleted. Tries with addresses that have no account:
+                    1 day
+                  </td>
                 </tr>
                 <tr>
                   <td>Contact messages, reports, moderation decisions</td>
