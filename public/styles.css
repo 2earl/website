@@ -1,8 +1,9 @@
 /*
  * 2earl.com
- * Same identity as login.2earl.com: the panel is the 2earl mark extended to the height of the
- * screen, its four facets cut at 45°. That is the one bold element; the rest stays neutral so the
- * brand colours carry the page. Tokens match login.2earl.com's app.css.
+ * Same identity as login.2earl.com: the mark's four facets run as one band along the top edge,
+ * and the mark itself sits at its normal size in the header. Content takes the full width of the
+ * screen, centred; the rest stays neutral so the brand colours carry the page.
+ * Tokens match login.2earl.com's app.css.
  */
 
 @font-face {
@@ -85,61 +86,39 @@ a:hover {
   border-radius: 4px;
 }
 
-/* ---- Frame: the mark panel + content ------------------------------------------------------ */
+/* ---- Page: the mark's band + one centred column ------------------------------------------ */
 
-.frame {
-  display: grid;
-  min-height: 100vh;
-  min-height: 100dvh;
-  grid-template-columns: minmax(15rem, 34%) 1fr;
+/* The four facets in the mark's order, as one band along the top edge of every page. */
+body::before {
+  content: '';
+  display: block;
+  height: 0.375rem;
+  background: linear-gradient(
+    90deg,
+    var(--red) 0 25%,
+    var(--vermilion) 25% 50%,
+    var(--orange) 50% 75%,
+    var(--amber) 75%
+  );
 }
 
-/*
- * The mark, extended: the V-notch at the top is as deep as half the panel's width, the two
- * upper facets run down as bands, and the two lower facets meet at the bottom centre, all at
- * 45° as in the icon. Container units keep the angles true at any size. Sticky, so it stays in
- * view beside long legal pages.
- */
-.panel {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  height: 100dvh;
-  container-type: size;
-  overflow: hidden;
-}
-
-.facet {
-  position: absolute;
-  inset: 0;
-}
-
-.facet-vermilion {
-  background: var(--vermilion);
-  /* 1px past the centre so no hairline of the page shows between the two bands. */
-  clip-path: polygon(0 0, calc(50cqw + 1px) calc(50cqw + 1px), calc(50cqw + 1px) 100cqh, 0 100cqh);
-}
-
-.facet-orange {
-  background: var(--orange);
-  clip-path: polygon(100cqw 0, 50cqw 50cqw, 50cqw 100cqh, 100cqw 100cqh);
-}
-
-.facet-red {
-  background: var(--red);
-  clip-path: polygon(0 calc(100cqh - 50cqw), 50cqw 100cqh, 0 100cqh);
-}
-
-.facet-amber {
-  background: var(--amber);
-  clip-path: polygon(100cqw calc(100cqh - 50cqw), 50cqw 100cqh, 100cqw 100cqh);
-}
-
-.content {
+.page {
   display: flex;
   flex-direction: column;
-  min-width: 0;
-  padding: 2.5rem clamp(1.25rem, 6vw, 5.5rem) 2rem;
+  min-height: calc(100vh - 0.375rem);
+  min-height: calc(100dvh - 0.375rem);
+  width: 100%;
+  max-width: 70rem;
+  margin: 0 auto;
+  padding: 1.5rem clamp(1.25rem, 5vw, 3rem) 2rem;
+}
+
+header.site {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
 }
 
 .brand {
@@ -173,9 +152,26 @@ a:hover {
   line-height: 1.5rem;
 }
 
+.header-action {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.5rem;
+  padding: 0 1rem;
+  border: 1px solid var(--rule);
+  border-radius: 0.625rem;
+  color: var(--fg);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.header-action:hover {
+  border-color: var(--muted);
+}
+
 .main {
   width: 100%;
-  padding: 3rem 0;
+  padding: clamp(2.5rem, 7vw, 5rem) 0 3rem;
 }
 
 footer.site {
@@ -236,46 +232,50 @@ h1 {
 
 /* ---- Start page ------------------------------------------------------------------------------ */
 
-.home {
-  max-width: 36rem;
-  margin: auto 0;
+.intro {
+  max-width: 44rem;
+  margin-bottom: clamp(2.5rem, 6vw, 4rem);
 }
 
 .hero {
-  font-size: clamp(2.25rem, 5vw, 3.5rem);
-  line-height: 1.05;
+  font-size: clamp(2.25rem, 5.5vw, 4rem);
+  line-height: 1.04;
   letter-spacing: -0.035em;
   margin-bottom: 1.25rem;
 }
 
+.intro .lede {
+  max-width: 38rem;
+  margin: 0;
+}
+
+/* The services side by side on wide screens, stacked on narrow ones. */
 .services {
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
   gap: 1rem;
-  margin: 0 0 2.5rem;
+  margin: 0 0 3rem;
   padding: 0;
   list-style: none;
 }
 
-/* Each service carries one facet colour on its edge: the account vermilion, the gateway orange. */
+/* Each service carries one facet colour on its top edge, in the mark's order. */
 .service {
-  position: relative;
-  padding: 1.25rem 1.5rem 1.25rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1.5rem 1.25rem;
   border: 1px solid var(--rule);
+  border-top: 0.375rem solid var(--vermilion);
   border-radius: 0.75rem;
   background: var(--surface);
-  overflow: hidden;
 }
 
-.service::before {
-  content: '';
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: 0.375rem;
-  background: var(--vermilion);
+.service-gateway {
+  border-top-color: var(--orange);
 }
 
-.service-gateway::before {
-  background: var(--orange);
+.service-promptshare {
+  border-top-color: var(--amber);
 }
 
 .service-head {
@@ -311,8 +311,14 @@ h1 {
 }
 
 .service p {
-  margin: 0 0 0.75rem;
+  margin: 0 0 1rem;
   font-size: 0.9375rem;
+}
+
+/* The link sits at the bottom, so links line up across cards of different lengths. */
+.service-link,
+.service-host {
+  margin-top: auto;
 }
 
 .service-link {
@@ -324,6 +330,10 @@ h1 {
   color: var(--muted);
   font-size: 0.875rem;
   font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+}
+
+.source {
+  max-width: 44rem;
 }
 
 .source h2 {
@@ -453,79 +463,36 @@ tbody tr:last-child td {
   border-bottom: 0;
 }
 
-/* ---- Narrow screens: the mark becomes a four-colour stripe -------------------------------- */
+/* ---- Narrow screens ----------------------------------------------------------------------- */
 
-@media (max-width: 52rem) {
-  .frame {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr;
-  }
-
-  .panel {
-    position: static;
-    container-type: normal;
-    display: flex;
-    height: 0.375rem;
-  }
-
-  .facet {
-    position: static;
-    flex: 1;
-    clip-path: none;
-  }
-
-  .facet-red {
-    order: 1;
-  }
-
-  .facet-vermilion {
-    order: 2;
-  }
-
-  .facet-orange {
-    order: 3;
-  }
-
-  .facet-amber {
-    order: 4;
-  }
-
-  .content {
-    padding-top: 1.75rem;
-  }
-
-  .main {
-    padding: 2.5rem 0;
-  }
-
-  .home {
-    margin: 0;
+@media (max-width: 30rem) {
+  .brand-sub {
+    display: none;
   }
 }
 
 /* ---- Forced colours: keep boundaries visible ------------------------------------------------ */
 
 @media (forced-colors: active) {
-  .panel {
+  body::before {
     display: none;
   }
 
-  .frame {
-    grid-template-columns: 1fr;
-  }
-
-  .service::before {
-    display: none;
+  .service {
+    border-top-width: 1px;
   }
 }
 
 @media print {
-  .panel,
+  body::before,
+  .header-action,
   .toc {
     display: none;
   }
 
-  .frame {
+  .page {
     display: block;
+    max-width: none;
+    min-height: 0;
   }
 }
