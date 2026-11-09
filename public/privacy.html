@@ -7,7 +7,7 @@
     <title>Privacy policy · 2earl</title>
     <meta
       name="description"
-      content="How 2earl handles personal data on 2earl.com and login.2earl.com."
+      content="How 2earl handles personal data on 2earl.com, login.2earl.com, mcp.2earl.com and promptshare.cc."
     />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link
@@ -45,7 +45,9 @@
               <li><a href="#controller">Who is responsible</a></li>
               <li><a href="#websites">Visiting our websites</a></li>
               <li><a href="#account">The 2earl account (login.2earl.com)</a></li>
-              <li><a href="#apps">Apps you connect</a></li>
+              <li><a href="#gateway">The MCP gateway (mcp.2earl.com)</a></li>
+              <li><a href="#promptshare">Prompt share (promptshare.cc)</a></li>
+              <li><a href="#apps">Apps and assistants you connect</a></li>
               <li><a href="#recipients">Service providers and transfers</a></li>
               <li><a href="#retention">How long we keep data</a></li>
               <li><a href="#rights">Your rights</a></li>
@@ -56,7 +58,9 @@
           <p>
             This policy explains what personal data 2earl processes, why, and what rights you have.
             It covers <strong>2earl.com</strong>, the 2earl account at
-            <strong>login.2earl.com</strong>, and any other 2earl service that links to this page.
+            <strong>login.2earl.com</strong>, the MCP gateway at <strong>mcp.2earl.com</strong>,
+            <strong>Prompt share</strong> at <strong>promptshare.cc</strong>, and any other 2earl
+            service that links to this page.
           </p>
 
           <h2 id="controller">1. Who is responsible</h2>
@@ -65,16 +69,16 @@
             Ferhat Duendar<br />
             Westfälische Straße 21<br />
             10709 Berlin, Germany<br />
-            Email: <a href="mailto:ffrhtd@gmail.com">ffrhtd@gmail.com</a>
+            Email: <a href="mailto:legal@2earl.com">legal@2earl.com</a>
           </address>
           <p>There is no data protection officer; please contact the address above.</p>
 
           <h2 id="websites">2. Visiting our websites</h2>
           <p>
-            When you open 2earl.com or login.2earl.com, your browser sends technical data with every
-            request: IP address, time, requested address, browser type and similar information. Our
-            hosting provider Cloudflare processes this data to deliver the pages and to protect them
-            against attacks and abuse.
+            When you open one of our websites, your browser sends technical data with every request:
+            IP address, time, requested address, browser type and similar information. Our hosting
+            provider Cloudflare processes this data to deliver the pages and to protect them against
+            attacks and abuse.
           </p>
           <ul>
             <li>
@@ -151,15 +155,131 @@
             limiting access to the service while it is not yet open to everyone.
           </p>
 
-          <h2 id="apps">4. Apps you connect</h2>
+          <h2 id="gateway">4. The MCP gateway (mcp.2earl.com)</h2>
           <p>
-            When you approve an app, it receives an access token for the permissions you approved
-            and an internal user ID. It does not receive your email address or name from us. The app
-            is responsible for its own processing; please read its privacy policy. You can
-            disconnect an app at any time in your account.
+            The gateway lets AI assistants (such as Claude) use 2earl services for you, after you
+            sign in with your 2earl account and approve them. It checks each request’s access token
+            and passes the request to the service, telling it only your internal user ID, the app
+            and the permissions you approved. It never passes on your token, email address or name.
+          </p>
+          <ul>
+            <li>
+              <strong>What it stores:</strong> a security log of tool use: time, your internal user
+              ID, the app, the service, the tool’s name and whether it succeeded. It stores
+              <strong>no</strong> tool arguments or results: what you ask and what comes back pass
+              through without being saved.
+            </li>
+            <li>
+              <strong>Legal basis:</strong> Art. 6(1)(b) GDPR for providing the service you connect;
+              Art. 6(1)(f) for the security log (detecting misuse).
+            </li>
+          </ul>
+
+          <h2 id="promptshare">5. Prompt share (promptshare.cc)</h2>
+          <p>
+            Prompt share keeps your prompts and shared sessions, so you can use them from any
+            assistant or with people you invite. You use it on the website or through the MCP
+            gateway.
+          </p>
+          <h3>What we store</h3>
+          <ul>
+            <li>
+              <strong>Your prompts:</strong> title, description, text, tags, the assistants they are
+              for, whether they are private or public, and when they were created and changed.
+            </li>
+            <li>
+              <strong>Your handle,</strong> if you choose one: the name other 2earl users see on
+              your public prompts and in shared sessions.
+            </li>
+            <li>
+              <strong>Shared sessions:</strong> their title, members and roles, and the entries you
+              or your assistant save, with who wrote them, which assistant was used, and when. Entry
+              text is stored <strong>encrypted</strong>. Nothing is saved unless you or your
+              assistant save it; Prompt share does not record your conversations on its own.
+            </li>
+            <li>
+              <strong>Invitation links</strong> to your sessions, stored only in hashed form, and
+              who used them.
+            </li>
+            <li>
+              <strong>Website sessions:</strong> a random identifier stored only in hashed form,
+              when you signed in, and when your second factor was last verified (for the operator’s
+              moderation view).
+            </li>
+            <li>
+              A <strong>security log</strong> of actions (for example “prompt created”), never their
+              text.
+            </li>
+          </ul>
+          <p><strong>Legal basis:</strong> Art. 6(1)(b) GDPR. This data is the service you use.</p>
+          <h3>Who can see what</h3>
+          <ul>
+            <li>Private prompts: only you.</li>
+            <li>
+              Public prompts: every signed-in 2earl user, with your handle. Copies they make are
+              theirs and stay when you make yours private or delete it.
+            </li>
+            <li>
+              Shared sessions: their members. People you invite can read every entry, and their
+              assistants can load them.
+            </li>
+          </ul>
+          <p>
+            Please don’t put health information, other people’s personal data or passwords and keys
+            into prompts or sessions others can see. Prompt share refuses entries that look like
+            keys or passwords in sessions with other members.
+          </p>
+          <h3>Health and other sensitive information</h3>
+          <p>
+            Your own prompts and sessions may contain health information or other special categories
+            of personal data (Art. 9 GDPR), if you choose to save them. After your first sign-in on
+            promptshare.cc we ask once whether you explicitly consent to us storing such
+            information. Saying no changes nothing about the service, but then please don’t save it.
+            We record your answer, the version of the wording, and when you gave it. You can
+            withdraw your consent at any time on your Prompt share account page; withdrawal does not
+            affect what was stored before, so delete content you no longer want us to keep.
+          </p>
+          <p>
+            <strong>Legal basis:</strong> Art. 9(2)(a) GDPR (explicit consent) for such information;
+            Art. 6(1)(c) together with Art. 7(1) for keeping a record of your answer, so we can show
+            that you consented.
+          </p>
+          <h3>Contact messages, reports and moderation</h3>
+          <p>
+            When you use the contact form or report content, we store what you write, the link you
+            report, and the name and email address you give. We forward a copy to the operator’s
+            mailbox, and remind the operator if a message is still unanswered after 30 minutes. If
+            you report content and give an email address, we email you a confirmation of receipt and
+            our decision, from noreply@promptshare.cc (sent through Cloudflare); replies go to
+            legal@2earl.com. If content is reported, the operator reads it, including entries of a
+            private shared session that a member reported. Decisions about your content are recorded
+            with their reasons and shown to you in your Prompt share account.
+          </p>
+          <p>
+            <strong>Legal basis:</strong> Art. 6(1)(c) GDPR together with the EU Digital Services
+            Act (we must take and handle reports of illegal content and explain our decisions); Art.
+            6(1)(f) for enforcing our terms of service and answering messages.
+          </p>
+          <h3>Cookies on promptshare.cc</h3>
+          <p>
+            promptshare.cc uses only strictly necessary cookies: keeping you signed in and securing
+            the sign-in. These do not require consent (§ 25(2) No. 2 TDDDG). There are no scripts,
+            analytics or tracking.
           </p>
 
-          <h2 id="recipients">5. Service providers and transfers</h2>
+          <h2 id="apps">6. Apps and assistants you connect</h2>
+          <p>
+            When you approve an app, it receives an access token for the permissions you approved
+            and an internal user ID. It does not receive your email address or name from us. You can
+            disconnect an app at any time in your account.
+          </p>
+          <p>
+            When an AI assistant uses Prompt share for you, the prompts and session entries it reads
+            are sent to that assistant, and so to its provider (for example Anthropic for Claude).
+            The provider is responsible for that processing under its own privacy policy.
+          </p>
+
+          <h2 id="recipients">7. Service providers and transfers</h2>
           <ul>
             <li>
               <strong>Cloudflare, Inc.</strong> (USA) hosts our services as a processor under a data
@@ -170,12 +290,13 @@
             </li>
             <li>
               <strong>Google</strong> provides the sign-in. Google processes your Google account
-              data under its own privacy policy as an independent controller.
+              data under its own privacy policy as an independent controller. Google also hosts the
+              operator’s mailbox, where contact messages and reports are forwarded.
             </li>
           </ul>
           <p>We do not sell personal data and do not share it for advertising.</p>
 
-          <h2 id="retention">6. How long we keep data</h2>
+          <h2 id="retention">8. How long we keep data</h2>
           <div class="table-scroll">
             <table>
               <thead>
@@ -206,6 +327,25 @@
                   <td>Until withdrawn, or until you delete your account</td>
                 </tr>
                 <tr>
+                  <td>Prompt share: prompts, handle, sessions and entries</td>
+                  <td>
+                    Until you delete them or your account. Entries you wrote in other people’s
+                    sessions are deleted with your account.
+                  </td>
+                </tr>
+                <tr>
+                  <td>Prompt share: invitation links</td>
+                  <td>7 days, or until used or revoked</td>
+                </tr>
+                <tr>
+                  <td>Contact messages, reports, moderation decisions</td>
+                  <td>
+                    About 6 months after they are closed. Content removed by moderation: about 6
+                    months, then deleted; content that suggests a threat to someone’s life or safety
+                    is kept until the police have it.
+                  </td>
+                </tr>
+                <tr>
                   <td>Account data</td>
                   <td>
                     Until you delete your account. Every other 2earl service you used is told to
@@ -217,7 +357,7 @@
             </table>
           </div>
 
-          <h2 id="rights">7. Your rights</h2>
+          <h2 id="rights">9. Your rights</h2>
           <p>You have the right to:</p>
           <ul>
             <li>access the data we hold about you (Art. 15 GDPR);</li>
@@ -225,14 +365,16 @@
             <li>have your data deleted (Art. 17);</li>
             <li>restrict processing (Art. 18);</li>
             <li>receive your data in a machine-readable format (Art. 20);</li>
+            <li>withdraw a consent you gave, at any time, for the future (Art. 7(3));</li>
             <li>
               <strong>object</strong> to processing based on legitimate interests, on grounds
               relating to your particular situation (Art. 21).
             </li>
           </ul>
           <p>
-            In your account you can see your data, download it, disconnect apps and delete the
-            account yourself. For anything else, write to the address in section 1.
+            In your account at login.2earl.com you can see your data, download it (including what
+            the MCP gateway and Prompt share hold about you), disconnect apps and delete the account
+            yourself. For anything else, write to the address in section 1.
           </p>
           <p>
             You also have the right to lodge a complaint with a supervisory authority. The authority
@@ -242,9 +384,12 @@
             >.
           </p>
 
-          <h2 id="other">8. Other information</h2>
+          <h2 id="other">10. Other information</h2>
           <ul>
-            <li>We do not use automated decision-making or profiling.</li>
+            <li>
+              We do not use automated decision-making or profiling. Moderation decisions are made by
+              a person.
+            </li>
             <li>
               Providing data is voluntary, but without signing in you cannot use the 2earl account.
             </li>
