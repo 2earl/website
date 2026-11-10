@@ -46,7 +46,7 @@
       </header>
       <main class="main prose">
         <h1>Privacy policy</h1>
-        <p class="meta">Last updated: 9 November 2026</p>
+        <p class="meta">Last updated: 10 November 2026</p>
         <nav class="toc" aria-labelledby="toc-heading">
           <h2 id="toc-heading">On this page</h2>
           <ol>
@@ -100,17 +100,36 @@
 
         <h2 id="account">3. The 2earl account (login.2earl.com)</h2>
 
-        <h3>Sign-in with Google</h3>
+        <h3>Signing in</h3>
+        <p>You sign in with your Google account, with a code we email to you, or with both.</p>
+        <ul>
+          <li>
+            <strong>Google:</strong> Google tells us your Google account ID, your email address,
+            whether Google has verified it, and your name. We do not receive or store your Google
+            password, your profile picture or access to any Google data.
+          </li>
+          <li>
+            <strong>Email code:</strong> we send a six-digit code and a sign-in link to the address
+            you type. We store the address, a hash of the code and of the link (never the code
+            itself), what the code is for, how often it was tried, a shortened IP address and when
+            it was sent. The code works for 10 minutes, once, and only in the browser that asked for
+            it. We limit how many codes an address and a network can receive, so the form cannot be
+            used to flood someone’s inbox.
+          </li>
+        </ul>
         <p>
-          You sign in with your Google account. When you do, Google tells us your Google account ID,
-          your email address, whether Google has verified it, and your name. We do not receive or
-          store your Google password, your profile picture or access to any Google data.
+          An address belongs to one 2earl account only. If you type an address that already signs in
+          with Google, we point you to Google instead of creating a second account, and the other
+          way round.
         </p>
 
         <h3>What we store</h3>
         <ul>
           <li>
-            Your account: Google account ID, email address, name, creation and last sign-in time.
+            Your account: the ways you sign in (Google account ID and its email address, and the
+            addresses you confirmed with a code), the name you chose or Google gave us, creation and
+            last sign-in time. You can add or remove a way to sign in and change your name in your
+            account.
           </li>
           <li>
             Sign-in sessions: a random session identifier (stored only in hashed form), when the
@@ -131,19 +150,32 @@
           account you sign up for.
         </p>
 
+        <h3>Security emails</h3>
+        <p>
+          We email your account’s address when something changes that you should know about: a way
+          to sign in or a second factor is added or removed, recovery codes are replaced, an app is
+          connected for the first time, or the account is deleted. These emails contain no
+          advertising and cannot be turned off, because they are how you notice that someone else
+          changed your account.
+        </p>
+        <p>
+          <strong>Legal basis:</strong> Art. 6(1)(b) GDPR for the sign-in codes you ask for; Art.
+          6(1)(f) for security emails (our legitimate interest in keeping accounts secure).
+        </p>
+
         <h3>Cookies on login.2earl.com</h3>
         <p>
           login.2earl.com uses only cookies that are strictly necessary for the service you request:
-          keeping you signed in, securing the sign-in process, and remembering which apps you have
-          approved. These do not require consent (§ 25(2) No. 2 TDDDG). There are no advertising or
-          analytics cookies.
+          keeping you signed in, securing the sign-in process (including tying an email code to the
+          browser that asked for it), and remembering which apps you have approved. These do not
+          require consent (§ 25(2) No. 2 TDDDG). There are no advertising or analytics cookies.
         </p>
 
         <h3>Security log</h3>
         <p>
-          We record security-relevant events, such as sign-ins, approvals, revocations and account
-          deletion, with the time, a shortened IP address and the app involved. We never record
-          passwords, tokens or codes.
+          We record security-relevant events, such as sign-ins, codes sent and failed, ways to sign
+          in added or removed, approvals, revocations and account deletion, with the time, a
+          shortened IP address and the app involved. We never record passwords, tokens or codes.
         </p>
         <p>
           <strong>Legal basis:</strong> Art. 6(1)(f) GDPR. We have a legitimate interest in
@@ -152,9 +184,11 @@
 
         <h3>Invitations</h3>
         <p>
-          While sign-up is closed, only invited Google accounts can sign in. For each invitation we
-          keep the invited email address; at the first sign-in it is replaced by the Google account
-          ID. Invitations are removed when they are withdrawn or when you delete your account.
+          Anyone can create an account while sign-up is open. We may close sign-up at times, for
+          example to deal with abuse; then only invited people can create one, and existing accounts
+          keep working. For each invitation we keep the invited email address; when it is used with
+          Google, it is replaced by the Google account ID. Invitations are removed when they are
+          withdrawn or when you delete your account.
         </p>
         <p>
           <strong>Legal basis:</strong> Art. 6(1)(f) GDPR. We have a legitimate interest in limiting
@@ -318,7 +352,9 @@
             processing agreement. Account data is stored in Cloudflare’s EU jurisdiction. Requests
             are handled at the Cloudflare location closest to you, which may be outside the EU.
             Transfers to the USA are covered by the EU–US Data Privacy Framework and the EU Standard
-            Contractual Clauses.
+            Contractual Clauses. Cloudflare Email Service also delivers our emails (sign-in codes,
+            security emails and Prompt share’s report replies), so it processes the recipient’s
+            address and the email’s content to deliver it.
           </li>
           <li>
             <strong>Google</strong> provides the sign-in. Google processes your Google account data
@@ -341,6 +377,10 @@
               <tr>
                 <td>Sign-in in progress</td>
                 <td>10 minutes</td>
+              </tr>
+              <tr>
+                <td>Email sign-in codes</td>
+                <td>Usable for 10 minutes; the record is deleted after 2 days</td>
               </tr>
               <tr>
                 <td>Sessions</td>
