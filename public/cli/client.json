@@ -1,0 +1,9 @@
+{
+  "client_id": "https://2earl.com/cli/client.json",
+  "client_name": "2earl CLI",
+  "client_uri": "https://github.com/2earl/cli",
+  "redirect_uris": ["https://login.2earl.com/device/callback"],
+  "grant_types": ["authorization_code", "refresh_token"],
+  "response_types": ["code"],
+  "token_endpoint_auth_method": "none"
+}

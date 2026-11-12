@@ -7,3 +7,10 @@
   Cross-Origin-Opener-Policy: same-origin
   Cross-Origin-Resource-Policy: same-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+
+# The 2earl CLI's OAuth client metadata document (draft-ietf-oauth-client-id-metadata-document):
+# login.2earl.com fetches it to learn the CLI's name and its one redirect address.
+/cli/client.json
+  Content-Type: application/json
+  Cache-Control: public, max-age=300
+  Access-Control-Allow-Origin: *
