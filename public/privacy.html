@@ -46,7 +46,7 @@
       </header>
       <main class="main prose">
         <h1>Privacy policy</h1>
-        <p class="meta">Last updated: 10 November 2026</p>
+        <p class="meta">Last updated: 12 November 2026</p>
         <nav class="toc" aria-labelledby="toc-heading">
           <h2 id="toc-heading">On this page</h2>
           <ol>
@@ -101,7 +101,10 @@
         <h2 id="account">3. The 2earl account (login.2earl.com)</h2>
 
         <h3>Signing in</h3>
-        <p>You sign in with your Google account, with a code we email to you, or with both.</p>
+        <p>
+          You sign in with your Google account, with a code we email to you, or with a passkey you
+          added to your account.
+        </p>
         <ul>
           <li>
             <strong>Google:</strong> Google tells us your Google account ID, your email address,
@@ -115,6 +118,13 @@
             it was sent. The code works for 10 minutes, once, and only in the browser that asked for
             it. We limit how many codes an address and a network can receive, so the form cannot be
             used to flood someone’s inbox.
+          </li>
+          <li>
+            <strong>Passkey:</strong> your device proves it holds the passkey you added, after
+            unlocking it with your fingerprint, face or device PIN. Your fingerprint, face or PIN
+            never leaves your device; we only receive a signature and check it against the public
+            key we stored when you added the passkey. While a passkey sign-in is in progress (at
+            most 5 minutes) we keep a random challenge for your browser.
           </li>
         </ul>
         <p>
@@ -133,8 +143,9 @@
           </li>
           <li>
             Sign-in sessions: a random session identifier (stored only in hashed form), when the
-            session was created and last used, a shortened IP address and a hash of your browser’s
-            user agent.
+            session was created and last used, how you signed in, a shortened IP address, a hash of
+            your browser’s user agent and a general device name such as “Firefox on Windows”. You
+            can see your signed-in devices in your account and sign any of them out.
           </li>
           <li>
             Apps you connect: which apps you have allowed to act for you, with which permissions and
