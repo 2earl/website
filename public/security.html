@@ -50,8 +50,8 @@
         <p>
           How we protect the 2earl account and the services that use it. This page is part of our
           <a href="/dpa">data processing terms</a> (technical and organizational measures, Art. 32
-          GDPR). The design and threat model are public in
-          <a href="https://github.com/2earl/login">2earl/login</a>.
+          GDPR). Customers can ask for our design and threat model at
+          <a href="mailto:legal@2earl.com">legal@2earl.com</a>.
         </p>
         <nav class="toc" aria-labelledby="toc-heading">
           <h2 id="toc-heading">On this page</h2>
@@ -125,12 +125,12 @@
         <h2 id="software">4. How the software is built and shipped</h2>
         <ul>
           <li>
-            All code is open source. Every change goes through a pull request with automated type
-            checks, tests and code scanning (CodeQL).
+            Every change goes through a pull request with automated type checks, linting, tests and
+            a dependency audit, and is reviewed before it is merged.
           </li>
           <li>
-            Production deploys run only after the operator approves them. Infrastructure is managed
-            as code, and changes are applied by hand after review.
+            Production deploys are started only by the operator. Infrastructure is managed as code,
+            and changes are applied by hand after review.
           </li>
           <li>Dependency updates are proposed automatically and reviewed before they ship.</li>
         </ul>
@@ -198,10 +198,10 @@
 
         <h2 id="report">9. Reporting a vulnerability</h2>
         <p>
-          Please report it privately through GitHub (Security, then “Report a vulnerability”) on
-          <a href="https://github.com/2earl/login/security">2earl/login</a>, or write to
-          <a href="mailto:legal@2earl.com">legal@2earl.com</a>. Don’t open a public issue. We
-          acknowledge reports and fix confirmed issues as quickly as their risk demands.
+          Please write to <a href="mailto:legal@2earl.com">legal@2earl.com</a>, with “Security” in
+          the subject, and don’t publish it before we’ve fixed it. Our
+          <a href="/.well-known/security.txt">security.txt</a> says the same. We acknowledge reports
+          and fix confirmed issues as quickly as their risk demands.
         </p>
       </main>
       <footer class="site">
@@ -209,7 +209,7 @@
           <a href="/privacy">Privacy policy</a><a href="/terms">Terms of service</a
           ><a href="/imprint">Imprint</a><a href="/security" aria-current="page">Security</a>
         </nav>
-        <p><a href="https://github.com/2earl">Source code</a> · Berlin</p>
+        <p>2earl · Berlin</p>
       </footer>
     </div>
   </body>

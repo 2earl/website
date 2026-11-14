@@ -33,4 +33,4 @@ changes how it handles data, update `public/privacy.html` in the same change and
 
 ## License
 
-[AGPL-3.0](LICENSE)
+Proprietary. All rights reserved; see [LICENSE](LICENSE).

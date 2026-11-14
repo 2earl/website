@@ -1,12 +1,11 @@
 # Security Policy
 
-This repository contains the 2earl.com website.
-Please do **not** report security vulnerabilities through public issues, discussions or pull requests.
+This repository contains the 2earl.com website. It is private and proprietary.
 
 ## Reporting a vulnerability
 
-Use GitHub's private vulnerability reporting:
-**Security → Report a vulnerability** on this repository.
+Write to **legal@2earl.com** with "Security" in the subject. The same contact is published at
+<https://2earl.com/.well-known/security.txt>. Please don't disclose it before it's fixed.
 
 Include as much of the following as you can:
 
@@ -14,13 +13,12 @@ Include as much of the following as you can:
 - steps to reproduce or a proof of concept
 - impact you believe it has
 
-You will receive an acknowledgement after the report is reviewed. Please allow time for a fix
-before any public disclosure.
+You will receive an acknowledgement after the report is reviewed.
 
 ## Scope
 
-In scope: the code in this repository and its deployment at `2earl.com`. The identity service has
-its own policy in [2earl/login](https://github.com/2earl/login/blob/main/SECURITY.md).
+In scope: the code in this repository and its deployment at `2earl.com`. The identity service
+has its own policy in 2earl/login.
 
 Out of scope: denial-of-service through volumetric traffic, social engineering, and findings in
 third-party services (Google, Cloudflare, GitHub).
