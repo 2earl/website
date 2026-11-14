@@ -46,7 +46,7 @@
       </header>
       <main class="main prose">
         <h1>Privacy policy</h1>
-        <p class="meta">Last updated: 12 November 2026</p>
+        <p class="meta">Last updated: 13 November 2026</p>
         <nav class="toc" aria-labelledby="toc-heading">
           <h2 id="toc-heading">On this page</h2>
           <ol>
@@ -240,16 +240,17 @@
             ID) for addresses at a domain it proved it controls. The directory then sends us, for
             each person, their work address, the directory’s ID for them, their name and whether
             they are active. While the directory says someone is active, the 2earl account that
-            signs in with that address is a member; we never create an account from it. We keep
-            these records until the directory removes the person or the organization is deleted. The
-            organization is responsible for what its directory sends.
+            signs in with that address is a member. At a domain the organization manages (below),
+            the directory can also create the account. We keep these records until the directory
+            removes the person or the organization is deleted. The organization is responsible for
+            what its directory sends.
           </li>
           <li>
             An organization can also let people with an address at its domain sign in through its
             own sign-in service (single sign-on). That service then tells us the work address of the
             person signing in, and we sign in the 2earl account that uses that address, or create
-            one if sign-up is open. We keep its answer only until the sign-in finishes, for 10
-            minutes at most.
+            one if sign-up is open or the organization manages the domain. We keep its answer only
+            until the sign-in finishes, for 10 minutes at most.
           </li>
         </ul>
         <p>
@@ -257,6 +258,43 @@
           For the address of someone invited, Art. 6(1)(f) GDPR: the inviting member’s and our
           legitimate interest in letting teams invite people; the invited person can decline, and
           the address is deleted after 7 days at most.
+        </p>
+
+        <h3 id="managed">Accounts an organization manages</h3>
+        <p>
+          An organization that proved it controls a domain can manage the 2earl accounts at that
+          domain, for example a company for its employees’ work addresses. For a managed account,
+          <strong>the organization is the controller</strong>: it decides what happens to the
+          account, and we process it on its behalf under our
+          <a href="/dpa">data processing terms</a> (Art. 28 GDPR). The organization’s own privacy
+          notice applies; ask it how it uses your account.
+        </p>
+        <ul>
+          <li>
+            A new account at a managed domain is managed from the start. If you already had an
+            account with an address there, nothing changes until you choose, at your next sign-in:
+            you let the organization manage it, or you keep it your own and we remove that address
+            from it. Until you choose, the organization learns nothing about your account.
+          </li>
+          <li>
+            The organization sees your name, address and role, can require you to sign in through
+            its single sign-on, and can deactivate or delete the account. Deactivating ends your
+            sessions and every app’s access; the account and its data are kept. Deleting removes
+            them in every 2earl service.
+          </li>
+          <li>
+            You can’t remove the managed address, leave the organization or delete the account
+            yourself; ask the organization. You can always see and download your data.
+          </li>
+          <li>
+            If the organization stops managing the domain, removes it or is deleted, the account
+            becomes yours again.
+          </li>
+        </ul>
+        <p>
+          <strong>Legal basis</strong> for our processing: the organization’s instructions under
+          Art. 28 GDPR; for the organization, the basis it has with you (for example your
+          employment). Your choice to let it manage an account you already had is recorded.
         </p>
 
         <h2 id="gateway">4. The MCP gateway (mcp.2earl.com)</h2>
@@ -497,6 +535,13 @@
                 </td>
               </tr>
               <tr>
+                <td>Managed accounts an organization’s directory removed</td>
+                <td>
+                  Deactivated at once; deleted 30 days later, unless the organization reactivates
+                  them
+                </td>
+              </tr>
+              <tr>
                 <td>Records an organization’s directory sent</td>
                 <td>Until the directory removes the person, or the organization is deleted</td>
               </tr>
@@ -567,6 +612,11 @@
           yourself. For anything else, write to the address in section 1.
         </p>
         <p>
+          If an organization manages your account, it decides about deleting and correcting it, so
+          send those requests to the organization. If you write to us instead, we pass your request
+          on to it.
+        </p>
+        <p>
           You also have the right to lodge a complaint with a supervisory authority. The authority
           responsible for us is the
           <a href="https://www.datenschutz-berlin.de"
@@ -592,7 +642,8 @@
       <footer class="site">
         <nav aria-label="Legal">
           <a href="/privacy" aria-current="page">Privacy policy</a
-          ><a href="/terms">Terms of service</a><a href="/imprint">Imprint</a>
+          ><a href="/terms">Terms of service</a><a href="/imprint">Imprint</a
+          ><a href="/security">Security</a>
         </nav>
         <p><a href="https://github.com/2earl">Source code</a> · Berlin</p>
       </footer>
