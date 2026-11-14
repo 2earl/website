@@ -239,11 +239,13 @@
             An organization can connect its company directory (for example Okta or Microsoft Entra
             ID) for addresses at a domain it proved it controls. The directory then sends us, for
             each person, their work address, the directory’s ID for them, their name and whether
-            they are active. While the directory says someone is active, the 2earl account that
-            signs in with that address is a member. At a domain the organization manages (below),
-            the directory can also create the account. We keep these records until the directory
-            removes the person or the organization is deleted. The organization is responsible for
-            what its directory sends.
+            they are active, and the groups it puts people in (the group’s name and who is in it).
+            While the directory says someone is active, the 2earl account that signs in with that
+            address is a member. At a domain the organization manages (below), the directory can
+            also create the account, and an owner can let the directory’s groups decide who is an
+            admin in the organization. We keep these records until the directory removes the person
+            or the organization is deleted. The organization is responsible for what its directory
+            sends.
           </li>
           <li>
             An organization can also let people with an address at its domain sign in through its
@@ -284,9 +286,9 @@
           </li>
           <li>
             It can also set rules for the account: a second factor or a passkey, how long a session
-            lasts, which ways you may sign in, and from which networks. To check the network, we
-            compare the address your request comes from with the organization’s list; we don’t store
-            it for this.
+            lasts, which ways you may sign in, from which networks, and which apps you may connect.
+            To check the network, we compare the address your request comes from with the
+            organization’s list; we don’t store it for this.
           </li>
           <li>
             You can’t remove the managed address, leave the organization or delete the account
@@ -548,7 +550,7 @@
                 </td>
               </tr>
               <tr>
-                <td>Records an organization’s directory sent</td>
+                <td>Records and groups an organization’s directory sent</td>
                 <td>Until the directory removes the person, or the organization is deleted</td>
               </tr>
               <tr>
