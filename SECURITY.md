@@ -1,6 +1,7 @@
 # Security Policy
 
-This repository contains the 2earl.com website. It is private and proprietary.
+This repository contains the 2earl.com website. It is public to read but proprietary:
+see LICENSE.
 
 ## Reporting a vulnerability
 
