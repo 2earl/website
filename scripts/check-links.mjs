@@ -1,10 +1,10 @@
-// Fails if any internal link or asset in public/*.html points to a file that does not exist.
+// Fails if any internal link or asset in public/**/*.html points to a file that does not exist.
 // Uses Node built-ins only.
 import { readdir, readFile, access } from 'node:fs/promises';
 import { join } from 'node:path';
 
 const root = 'public';
-const pages = (await readdir(root)).filter((f) => f.endsWith('.html'));
+const pages = (await readdir(root, { recursive: true })).filter((f) => f.endsWith('.html'));
 const pattern = /(?:href|src)="(\/[^"#?]*)/g;
 const missing = [];
 
