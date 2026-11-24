@@ -169,6 +169,35 @@ header.site {
   border-color: var(--muted);
 }
 
+.header-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.25rem;
+}
+
+/* The language switcher: every language in its own name; the current one is plain text. */
+.languages {
+  display: flex;
+  gap: 0.75rem;
+  font-size: 0.9375rem;
+}
+
+.languages a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.languages a:hover {
+  color: var(--fg);
+  text-decoration: underline;
+}
+
+.languages a[aria-current='true'] {
+  color: var(--fg);
+  font-weight: 600;
+}
+
 .main {
   width: 100%;
   padding: clamp(2.5rem, 7vw, 5rem) 0 3rem;

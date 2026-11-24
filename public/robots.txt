@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://2earl.com/sitemap.xml

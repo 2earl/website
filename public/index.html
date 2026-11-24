@@ -11,6 +11,10 @@
     />
     <meta name="theme-color" content="#f7f7f8" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#141315" media="(prefers-color-scheme: dark)" />
+    <link rel="canonical" href="https://2earl.com/" />
+    <link rel="alternate" hreflang="en" href="https://2earl.com/" />
+    <link rel="alternate" hreflang="tr" href="https://2earl.com/tr" />
+    <link rel="alternate" hreflang="x-default" href="https://2earl.com/" />
     <meta property="og:site_name" content="2earl" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="2earl · Decide which apps may act for you" />
@@ -19,8 +23,9 @@
       content="2earl builds services around one account: approve or withdraw every app that wants to act on your behalf."
     />
     <meta property="og:url" content="https://2earl.com/" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="tr_TR" />
     <meta name="twitter:card" content="summary" />
-    <link rel="canonical" href="https://2earl.com/" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link
       rel="preload"
@@ -30,6 +35,37 @@
       crossorigin
     />
     <link rel="stylesheet" href="/styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://2earl.com/#organization",
+            "name": "2earl",
+            "url": "https://2earl.com/",
+            "logo": "https://2earl.com/favicon.svg",
+            "email": "legal@2earl.com",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Westfälische Straße 21",
+              "postalCode": "10709",
+              "addressLocality": "Berlin",
+              "addressCountry": "DE"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://2earl.com/#website",
+            "url": "https://2earl.com/",
+            "name": "2earl",
+            "description": "2earl builds services around one account: approve or withdraw every app that wants to act on your behalf.",
+            "inLanguage": ["en", "tr"],
+            "publisher": { "@id": "https://2earl.com/#organization" }
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <div class="page">
@@ -42,7 +78,13 @@
             <path fill="#FBB03B" d="M100 50V85A15 15 0 0 1 85 100H50Z" /></svg
           ><span class="brand-name">2earl</span></a
         >
-        <a class="header-action" href="https://login.2earl.com">Sign in</a>
+        <div class="header-actions">
+          <nav class="languages" aria-label="Language">
+            <a href="/" lang="en" aria-current="true">English</a
+            ><a href="/tr" hreflang="tr" lang="tr">Türkçe</a>
+          </nav>
+          <a class="header-action" href="https://login.2earl.com">Sign in</a>
+        </div>
       </header>
       <main class="main home">
         <div class="intro">

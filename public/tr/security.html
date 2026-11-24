@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Güvenlik · 2earl</title>
+    <meta
+      name="description"
+      content="2earl hesabını ve onu kullanan hizmetleri nasıl koruyoruz: verilerin yeri, giriş, erişim, yazılım, kayıtlar, yedekler ve alt işleyenler."
+    />
+    <meta name="theme-color" content="#f7f7f8" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#141315" media="(prefers-color-scheme: dark)" />
+    <link rel="canonical" href="https://2earl.com/tr/security" />
+    <link rel="alternate" hreflang="en" href="https://2earl.com/security" />
+    <link rel="alternate" hreflang="tr" href="https://2earl.com/tr/security" />
+    <link rel="alternate" hreflang="x-default" href="https://2earl.com/security" />
+    <meta property="og:site_name" content="2earl" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Güvenlik · 2earl" />
+    <meta
+      property="og:description"
+      content="2earl hesabını ve onu kullanan hizmetleri nasıl koruyoruz: verilerin yeri, giriş, erişim, yazılım, kayıtlar, yedekler ve alt işleyenler."
+    />
+    <meta property="og:url" content="https://2earl.com/tr/security" />
+    <meta property="og:locale" content="tr_TR" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link
+      rel="preload"
+      href="/fonts/readex-pro-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="site">
+        <a class="brand" href="/tr"
+          ><svg viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+            <path fill="#F15A24" d="M0 0 50 50V100L0 50Z" />
+            <path fill="#F7931E" d="M100 0 50 50V100L100 50Z" />
+            <path fill="#ED1C24" d="M0 50 50 100H15A15 15 0 0 1 0 85Z" />
+            <path fill="#FBB03B" d="M100 50V85A15 15 0 0 1 85 100H50Z" /></svg
+          ><span class="brand-name">2earl</span><span class="brand-sub">Hukuki</span></a
+        >
+        <div class="header-actions">
+          <nav class="languages" aria-label="Dil">
+            <a href="/security" hreflang="en" lang="en">English</a
+            ><a href="/tr/security" lang="tr" aria-current="true">Türkçe</a>
+          </nav>
+          <a class="header-action" href="https://login.2earl.com/?lang=tr">Giriş yap</a>
+        </div>
+      </header>
+      <main class="main prose">
+        <h1>Güvenlik</h1>
+        <p class="meta">Son güncelleme: 24 Kasım 2026</p>
+        <p class="meta">
+          Bu metin İngilizce aslının çevirisidir. Aralarında bir fark olursa
+          <a href="https://2earl.com/security" hreflang="en">İngilizce metin</a> esas alınır.
+        </p>
+        <p>
+          2earl hesabını ve onu kullanan hizmetleri nasıl koruduğumuzu anlatır. Bu sayfa
+          <a href="/tr/dpa">veri işleme koşullarımızın</a> bir parçasıdır (teknik ve idari
+          tedbirler, GDPR madde 32). Kurumsal müşteriler tasarım belgelerimizi ve tehdit modelimizi
+          <a href="mailto:legal@2earl.com">legal@2earl.com</a> adresinden isteyebilir.
+        </p>
+        <nav class="toc" aria-labelledby="toc-heading">
+          <h2 id="toc-heading">Bu sayfada</h2>
+          <ol>
+            <li><a href="#data">Veriler nerede ve nasıl saklanır</a></li>
+            <li><a href="#signin">Giriş</a></li>
+            <li><a href="#access">Kim neye erişebilir</a></li>
+            <li><a href="#software">Yazılım nasıl geliştirilir ve yayına alınır</a></li>
+            <li><a href="#monitoring">Kayıtlar ve kötüye kullanıma karşı koruma</a></li>
+            <li><a href="#backups">Yedekler ve erişilebilirlik</a></li>
+            <li><a href="#incidents">Olaylar ve ihlaller</a></li>
+            <li><a href="#subprocessors">Alt işleyenler</a></li>
+            <li><a href="#report">Güvenlik açığı bildirmek</a></li>
+          </ol>
+        </nav>
+
+        <h2 id="data">1. Veriler nerede ve nasıl saklanır</h2>
+        <ul>
+          <li>
+            Hesap verileri, Cloudflare’in AB yetki alanındaki Cloudflare D1 ve Workers KV’de
+            saklanır.
+          </li>
+          <li>
+            Tüm trafik TLS 1.2 veya daha yenisini ve HSTS’yi kullanır. Hiçbir hizmete şifrelenmemiş
+            erişim yoktur.
+          </li>
+          <li>
+            Oturum çerezleri, erişim ve yenileme token’ları, giriş kodları ve dizin token’ları
+            yalnızca özet (hash) olarak saklanır. Doğrulama uygulaması sırları ve uygulama
+            bağlantılarının ayrıntıları şifrelenir. Geçiş anahtarları açık anahtar olarak saklanır.
+          </li>
+          <li>Parola saklamıyoruz: 2earl parola kullanmaz.</li>
+        </ul>
+
+        <h2 id="signin">2. Giriş</h2>
+        <ul>
+          <li>
+            Google ile, e-postayla gelen tek kullanımlık bir kodla, bir geçiş anahtarıyla ya da bir
+            kurumun çoklu oturum açma hizmetiyle (SAML 2.0 veya OpenID Connect) giriş yapılır.
+            İsteğe bağlı ikinci adımlar: geçiş anahtarları ve doğrulama uygulamaları, kurtarma
+            kodlarıyla birlikte.
+          </li>
+          <li>
+            Oturumlar 12 saat kullanılmadığında ve en geç 7 gün sonra sona erer. Hassas
+            değişiklikler ikinci adımı yeniden ister.
+          </li>
+          <li>
+            Kurumlar kendi hesaplarını yönetebilir, kendi çoklu oturum açma hizmetlerini zorunlu
+            tutabilir ve ayrılan kişilerin erişimi hemen kesilsin diye dizinlerini (SCIM 2.0)
+            bağlayabilir. Yönettikleri hesaplar için ikinci adımı ya da geçiş anahtarını zorunlu
+            tutabilir, oturumları kısaltabilir, giriş yollarını, ağları ve hesapların
+            kullanılabileceği uygulamaları sınırlayabilir ve rolleri dizinlerindeki gruplara
+            bırakabilirler; her istek denetlenir.
+          </li>
+          <li>
+            Uygulamalar tek bir hizmete bağlı, kısa ömürlü token’lar alır; sahiplik kanıtlı
+            token’ları (DPoP) ve önceden gönderilen yetkilendirme isteklerini (PAR) destekliyoruz.
+          </li>
+        </ul>
+
+        <h2 id="access">3. Kim neye erişebilir</h2>
+        <ul>
+          <li>
+            Yönetim erişimi <a href="/tr/imprint">künyede</a> adı geçen işletmeciye aittir; başka
+            kimin erişeceğine yalnızca o karar verir: hizmeti yürüten yöneticiler ve hesapları ile
+            kurumları görüp bir hesabın tüm oturumlarını kapatabilen destek ekibi. Yöneticiler
+            erişim veremez ve diğer ekip üyeleri üzerinde işlem yapamaz. Yönetim her zaman ikinci
+            bir doğrulama adımı, her değişiklik yakın zamanda yapılmış bir doğrulama ister ve her
+            işlem kayda geçer.
+          </li>
+          <li>
+            Altyapı kimlik bilgileri her görevin gerektirdiğiyle sınırlıdır ve GitHub ile HashiCorp
+            Terraform Cloud’da şifreli sırlar olarak tutulur; asla kişisel veri içermezler.
+          </li>
+          <li>Her 2earl hizmeti yalnızca izinlerinin kapsadığı verileri görür.</li>
+        </ul>
+
+        <h2 id="software">4. Yazılım nasıl geliştirilir ve yayına alınır</h2>
+        <ul>
+          <li>
+            Her değişiklik; otomatik tür denetimleri, kod denetimi (lint), testler ve bağımlılık
+            denetimi içeren bir pull request’ten geçer ve birleştirilmeden önce incelenir.
+          </li>
+          <li>
+            Canlı ortama dağıtımları yalnızca işletmeci başlatır. Altyapı kod olarak yönetilir;
+            değişiklikler incelemeden sonra elle uygulanır.
+          </li>
+          <li>Bağımlılık güncellemeleri otomatik önerilir ve yayına girmeden önce incelenir.</li>
+        </ul>
+
+        <h2 id="monitoring">5. Kayıtlar ve kötüye kullanıma karşı koruma</h2>
+        <ul>
+          <li>
+            Bir güvenlik kaydı; girişleri, giriş yöntemlerindeki ve ikinci adımlardaki
+            değişiklikleri, yönetim ve kurum değişikliklerini kaydeder. 90 gün saklanır. Kurumlar
+            kendi etkinliklerini görür.
+          </li>
+          <li>
+            Ağın ucunda ve hizmetin içinde uygulanan istek sınırları; girişi, kodları, token’ları ve
+            dizin eşitlemesini korur.
+          </li>
+          <li>Kişiler hesaplarındaki güvenlikle ilgili her değişiklik için e-posta alır.</li>
+        </ul>
+
+        <h2 id="backups">6. Yedekler ve erişilebilirlik</h2>
+        <ul>
+          <li>
+            Veritabanı 30 güne kadar herhangi bir ana geri döndürülebilir. Silinen veriler o zamana
+            kadar içinde kalabilir; yalnızca bir felaketten kurtulmak için geri yüklenir.
+          </li>
+          <li>
+            Hizmetler Cloudflare’in küresel ağında çalışır. Henüz sözleşmeye bağlı bir hizmet düzeyi
+            sunmuyoruz.
+          </li>
+        </ul>
+
+        <h2 id="incidents">7. Olaylar ve ihlaller</h2>
+        <p>
+          Şüphelenilen bir olayı hemen değerlendirir, sınırlar ve kaydını tutarız. Kişisel veri
+          ihlallerini, gerektiğinde 72 saat içinde denetim makamına bildiririz (GDPR madde 33),
+          riskin yüksek olduğu durumlarda etkilenen kişilere haber veririz (madde 34) ve kurumlara
+          yönettikleri hesaplarla ilgili 48 saat içinde bilgi veririz (<a href="/tr/dpa#breaches"
+            >veri işleme koşulları</a
+          >).
+        </p>
+
+        <h2 id="subprocessors">8. Alt işleyenler</h2>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>Alt işleyen</th>
+                <th>Ne için</th>
+                <th>Nerede</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Cloudflare, Inc.</td>
+                <td>Barındırma, veritabanı, ağ, e-posta gönderimi</td>
+                <td>Veriler AB’de saklanır; istekler en yakın konumda işlenir</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          Google bir alt işleyen değildir: biri Google ile giriş yapmayı seçtiğinde Google, o
+          kişinin Google hesabı için bağımsız bir veri sorumlusu olarak hareket eder. Bir kurumun
+          kimlik sağlayıcısı ve dizini kurumun kendisine aittir.
+        </p>
+
+        <h2 id="report">9. Güvenlik açığı bildirmek</h2>
+        <p>
+          Lütfen konu satırına “Security” yazarak
+          <a href="mailto:legal@2earl.com">legal@2earl.com</a>
+          adresine yazın ve biz düzeltmeden yayımlamayın.
+          <a href="/.well-known/security.txt">security.txt</a> dosyamız da aynısını söyler.
+          Bildirimlerin alındığını teyit eder, doğrulanan sorunları risklerinin gerektirdiği hızda
+          düzeltiriz.
+        </p>
+      </main>
+      <footer class="site">
+        <nav aria-label="Hukuki bilgiler">
+          <a href="/tr/privacy">Gizlilik politikası</a><a href="/tr/terms">Kullanım koşulları</a
+          ><a href="/tr/imprint">Künye</a><a href="/tr/security" aria-current="page">Güvenlik</a>
+        </nav>
+        <p>2earl · Berlin</p>
+      </footer>
+    </div>
+  </body>
+</html>

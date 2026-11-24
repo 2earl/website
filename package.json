@@ -11,9 +11,10 @@
   },
   "scripts": {
     "dev": "wrangler dev",
-    "lint": "html-validate \"public/**/*.html\" && prettier --check . && node scripts/check-links.mjs",
+    "lint": "node scripts/build.mjs --check && html-validate \"public/**/*.html\" && prettier --check . && node scripts/check-links.mjs",
     "format": "prettier --write .",
-    "build": "wrangler deploy --dry-run --outdir dist"
+    "build": "wrangler deploy --dry-run --outdir dist",
+    "build:pages": "node scripts/build.mjs"
   },
   "devDependencies": {
     "html-validate": "11.21.1",

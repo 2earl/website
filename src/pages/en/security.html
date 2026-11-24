@@ -1,0 +1,162 @@
+---
+title: Security · 2earl
+description: How 2earl protects accounts and data: storage, sign-in, access, software, incidents and subprocessors.
+main: prose
+section: legal
+updated: 2026-11-24
+---
+
+<h1>Security</h1>
+<p class="meta">Last updated: 24 November 2026</p>
+<p>
+  How we protect the 2earl account and the services that use it. This page is part of our
+  <a href="/dpa">data processing terms</a> (technical and organizational measures, Art. 32 GDPR).
+  Customers can ask for our design and threat model at
+  <a href="mailto:legal@2earl.com">legal@2earl.com</a>.
+</p>
+<nav class="toc" aria-labelledby="toc-heading">
+  <h2 id="toc-heading">On this page</h2>
+  <ol>
+    <li><a href="#data">Where data is and how it’s stored</a></li>
+    <li><a href="#signin">Signing in</a></li>
+    <li><a href="#access">Who can access what</a></li>
+    <li><a href="#software">How the software is built and shipped</a></li>
+    <li><a href="#monitoring">Logging and abuse protection</a></li>
+    <li><a href="#backups">Backups and availability</a></li>
+    <li><a href="#incidents">Incidents and breaches</a></li>
+    <li><a href="#subprocessors">Subprocessors</a></li>
+    <li><a href="#report">Reporting a vulnerability</a></li>
+  </ol>
+</nav>
+
+<h2 id="data">1. Where data is and how it’s stored</h2>
+<ul>
+  <li>Account data is stored in Cloudflare D1 and Workers KV in Cloudflare’s EU jurisdiction.</li>
+  <li>
+    All traffic uses TLS 1.2 or newer, with HSTS. There is no unencrypted access to any service.
+  </li>
+  <li>
+    Session cookies, access and refresh tokens, sign-in codes and directory tokens are stored only
+    as hashes. Authenticator-app secrets and the details of app connections are encrypted. Passkeys
+    are stored as public keys.
+  </li>
+  <li>We store no passwords: 2earl doesn’t use them.</li>
+</ul>
+
+<h2 id="signin">2. Signing in</h2>
+<ul>
+  <li>
+    Sign-in with Google, a one-time code by email, a passkey, or an organization’s single sign-on
+    (SAML 2.0 or OpenID Connect). Optional second factors: passkeys and authenticator apps, with
+    recovery codes.
+  </li>
+  <li>
+    Sessions end after 12 hours unused and after 7 days at most. Sensitive changes ask for the
+    second factor again.
+  </li>
+  <li>
+    Organizations can manage their accounts, require their single sign-on, and connect their
+    directory (SCIM 2.0) so leavers lose access at once. For the accounts they manage, they can
+    require a second factor or a passkey, shorten sessions, limit the ways to sign in, the networks
+    and the apps the accounts can be used with, and let their directory’s groups decide roles; every
+    request is checked.
+  </li>
+  <li>
+    Apps get short-lived tokens bound to one service; we support proof-of-possession tokens (DPoP)
+    and pushed authorization requests.
+  </li>
+</ul>
+
+<h2 id="access">3. Who can access what</h2>
+<ul>
+  <li>
+    Administrative access belongs to the operator named in the
+    <a href="/imprint">imprint</a>, who alone decides who else has it: admins, who run the service,
+    and support, who see accounts and organizations and can sign an account out. Admins can’t give
+    access or act on other staff. Administration always requires a second factor, every change a
+    recent one, and every action is logged.
+  </li>
+  <li>
+    Infrastructure credentials are scoped to what each task needs and kept as encrypted secrets in
+    GitHub and HashiCorp Terraform Cloud; they never hold personal data.
+  </li>
+  <li>Each 2earl service sees only the data its permissions allow.</li>
+</ul>
+
+<h2 id="software">4. How the software is built and shipped</h2>
+<ul>
+  <li>
+    Every change goes through a pull request with automated type checks, linting, tests and a
+    dependency audit, and is reviewed before it is merged.
+  </li>
+  <li>
+    Production deploys are started only by the operator. Infrastructure is managed as code, and
+    changes are applied by hand after review.
+  </li>
+  <li>Dependency updates are proposed automatically and reviewed before they ship.</li>
+</ul>
+
+<h2 id="monitoring">5. Logging and abuse protection</h2>
+<ul>
+  <li>
+    A security log records sign-ins, changes to sign-in methods and second factors, administration
+    and organization changes. It is kept for 90 days. Organizations see their own activity.
+  </li>
+  <li>
+    Rate limits at the network edge and in the service protect sign-in, codes, tokens and directory
+    sync.
+  </li>
+  <li>People get an email about every security-relevant change to their account.</li>
+</ul>
+
+<h2 id="backups">6. Backups and availability</h2>
+<ul>
+  <li>
+    The database has point-in-time recovery for up to 30 days. Deleted data can stay in it until
+    then; it is restored only to recover from a disaster.
+  </li>
+  <li>
+    The services run on Cloudflare’s global network. We don’t yet offer a contractual service level.
+  </li>
+</ul>
+
+<h2 id="incidents">7. Incidents and breaches</h2>
+<p>
+  We assess a suspected incident at once, contain it, and keep a record of it. We report personal
+  data breaches to the supervisory authority within 72 hours where required (Art. 33 GDPR), tell
+  affected people where the risk is high (Art. 34), and tell organizations about their managed
+  accounts within 48 hours (<a href="/dpa#breaches">data processing terms</a>).
+</p>
+
+<h2 id="subprocessors">8. Subprocessors</h2>
+<div class="table-scroll">
+  <table>
+    <thead>
+      <tr>
+        <th>Subprocessor</th>
+        <th>What for</th>
+        <th>Where</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Cloudflare, Inc.</td>
+        <td>Hosting, database, network, email delivery</td>
+        <td>Data stored in the EU; requests handled at the nearest location</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>
+  Google is not a subprocessor: when someone chooses to sign in with Google, Google acts as an
+  independent controller for their Google account. An organization’s identity provider and directory
+  are the organization’s own.
+</p>
+
+<h2 id="report">9. Reporting a vulnerability</h2>
+<p>
+  Please write to <a href="mailto:legal@2earl.com">legal@2earl.com</a>, with “Security” in the
+  subject, and don’t publish it before we’ve fixed it. Our
+  <a href="/.well-known/security.txt">security.txt</a> says the same. We acknowledge reports and fix
+  confirmed issues as quickly as their risk demands.
+</p>

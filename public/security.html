@@ -11,6 +11,10 @@
     />
     <meta name="theme-color" content="#f7f7f8" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#141315" media="(prefers-color-scheme: dark)" />
+    <link rel="canonical" href="https://2earl.com/security" />
+    <link rel="alternate" hreflang="en" href="https://2earl.com/security" />
+    <link rel="alternate" hreflang="tr" href="https://2earl.com/tr/security" />
+    <link rel="alternate" hreflang="x-default" href="https://2earl.com/security" />
     <meta property="og:site_name" content="2earl" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Security · 2earl" />
@@ -19,8 +23,9 @@
       content="How 2earl protects accounts and data: storage, sign-in, access, software, incidents and subprocessors."
     />
     <meta property="og:url" content="https://2earl.com/security" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="tr_TR" />
     <meta name="twitter:card" content="summary" />
-    <link rel="canonical" href="https://2earl.com/security" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link
       rel="preload"
@@ -42,7 +47,13 @@
             <path fill="#FBB03B" d="M100 50V85A15 15 0 0 1 85 100H50Z" /></svg
           ><span class="brand-name">2earl</span><span class="brand-sub">Legal</span></a
         >
-        <a class="header-action" href="https://login.2earl.com">Sign in</a>
+        <div class="header-actions">
+          <nav class="languages" aria-label="Language">
+            <a href="/security" lang="en" aria-current="true">English</a
+            ><a href="/tr/security" hreflang="tr" lang="tr">Türkçe</a>
+          </nav>
+          <a class="header-action" href="https://login.2earl.com">Sign in</a>
+        </div>
       </header>
       <main class="main prose">
         <h1>Security</h1>
