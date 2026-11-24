@@ -1,0 +1,88 @@
+---
+title: Yapay zekâ asistanınızı 2earl’e bağlayın · MCP
+description: 2earl’ü Claude, ChatGPT, Cursor ya da herhangi bir MCP istemcisine özel bağlayıcı olarak ekleyin, yalnızca istediğiniz izinleri onaylayın ve bağlantıyı istediğiniz zaman kesin.
+main: prose
+updated: 2026-11-24
+---
+
+<h1>Yapay zekâ asistanınızı 2earl’e bağlayın</h1>
+<p class="lede">
+  2earl MCP ağ geçidi; Claude, ChatGPT, Cursor ve Model Context Protocol’ü (MCP) destekleyen diğer
+  asistanların 2earl hizmetlerini, yalnızca onayladığınız izinlerle sizin için kullanmasını sağlar.
+</p>
+
+<h2 id="add">Üç adımda ekleyin</h2>
+<ol>
+  <li>
+    Asistanınızda şu adresle özel bir bağlayıcı (bazıları MCP sunucusu der) ekleyin:
+    <code>https://mcp.2earl.com/mcp</code>. Claude’da:
+    <strong>Settings → Connectors → Add custom connector</strong>.
+  </li>
+  <li>
+    Asistanınız login.2earl.com’u açar. 2earl hesabınızla giriş yapın ve neler yapabileceğini
+    işaretleyin.
+  </li>
+  <li>İhtiyacınızı kendi sözlerinizle isteyin. Asistan doğru aracı seçer.</li>
+</ol>
+<p>
+  Yalnızca Prompt share için bunun yerine <code>https://mcp.2earl.com/promptshare</code> adresini
+  kullanın: asistan o zaman yalnızca Prompt share’in araçlarını görür.
+</p>
+
+<h2 id="permissions">İzinler sizin kontrolünüzde</h2>
+<p>
+  Her 2earl hizmetinin kendi izinleri vardır ve bağlanırken onları tek tek onaylarsınız. Prompt
+  share için bunlar:
+</p>
+<ul>
+  <li>
+    <strong>Okuma</strong>: prompt’larınız, sizinle paylaşılan prompt’lar ve herkese açık
+    prompt’lar.
+  </li>
+  <li><strong>Yazma</strong>: kendi prompt’larınızı oluşturma, değiştirme ve silme.</li>
+  <li><strong>Oturumlar</strong>: paylaşılan oturumlarınıza kaydetme ve onları okuma.</li>
+</ul>
+<p>
+  Bir prompt’u herkese açık yapmak, paylaşmak ve kişileri davet etmek yalnızca web sitesinde
+  mümkündür, asla bir asistan üzerinden değil. Bağlı her asistanı
+  <a href="https://login.2earl.com/account?lang=tr">2earl hesabınızda</a> görürsünüz; birinin
+  bağlantısını kesmek erişimini yaklaşık bir dakika içinde sona erdirir.
+</p>
+
+<h2 id="examples">Neler isteyebilirsiniz</h2>
+<ul>
+  <li>
+    “Bunu Code review adında bir prompt olarak kaydet.” Daha sonra herhangi bir asistanda: “Code
+    review prompt’umu bu diff üzerinde kullan.”
+  </li>
+  <li>
+    “Gezi planı adında bir oturum oluştur ve bir özet yaz.” Daha sonra başka bir sohbette: “Gezi
+    planı oturumumu yükle. Hâlâ açık olan ne var?”
+  </li>
+  <li>“Toplantı notları için herkese açık prompt’ları bul ve en iyisini prompt’larıma kopyala.”</li>
+</ul>
+
+<h2 id="privacy">Ağ geçidi neleri saklar</h2>
+<p>
+  Ağ geçidi her isteğin erişimini denetler ve isteği hizmete dahili kullanıcı kimliğinizle ve
+  onayladığınız izinlerle iletir; e-posta adresinizi ya da adınızı asla iletmez. Hangi aracın
+  kullanıldığını ve başarılı olup olmadığını gösteren bir güvenlik kaydı tutar; ne sorduğunuzu ya da
+  ne yanıt geldiğini tutmaz. Ayrıntılar <a href="/privacy#gateway">gizlilik politikasında</a>.
+</p>
+
+<h2 id="trouble">Bir şey çalışmazsa</h2>
+<ul>
+  <li>
+    <strong>Yeni araçlar görünmüyor:</strong> bağlantıyı kesip yeniden bağlanın; asistanlar araç
+    listesini bağlandığınız andaki haliyle tutar.
+  </li>
+  <li>
+    <strong>“Bu uygulamanın bunu yapmasına izin verilmedi”:</strong> o izni işaretlemediniz. Yeniden
+    bağlanın ve işaretleyin.
+  </li>
+  <li>
+    <strong>Giriş tekrar tekrar soruluyor:</strong> login.2earl.com için çerezlere izin verin, sonra
+    yeniden deneyin.
+  </li>
+</ul>
+<p><a href="/promptshare">Prompt share</a> hakkında daha fazlasını okuyun.</p>

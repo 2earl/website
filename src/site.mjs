@@ -22,6 +22,7 @@ export const LOCALES = [
       terms: 'Terms of service',
       imprint: 'Imprint',
       security: 'Security',
+      ogAlt: '2earl: Decide which apps may act for you. One account for every 2earl service.',
     },
   },
   {
@@ -38,12 +39,24 @@ export const LOCALES = [
       terms: 'Kullanım koşulları',
       imprint: 'Künye',
       security: 'Güvenlik',
+      ogAlt:
+        '2earl: Sizin adınıza hangi uygulamaların çalışacağına siz karar verin. Her 2earl hizmeti için tek hesap.',
     },
   },
 ];
 
 /** Pages, by file name in src/pages/<locale>/; `index` is the start page. */
-export const PAGES = ['index', 'privacy', 'terms', 'imprint', 'security', 'dpa', '404'];
+export const PAGES = [
+  'index',
+  'mcp',
+  'promptshare',
+  'privacy',
+  'terms',
+  'imprint',
+  'security',
+  'dpa',
+  '404',
+];
 
 /** Pages in the footer, in order. */
 export const FOOTER = ['privacy', 'terms', 'imprint', 'security'];

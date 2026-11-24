@@ -1,0 +1,84 @@
+---
+title: Connect your AI assistant to 2earl · MCP gateway
+description: Add 2earl to Claude, ChatGPT, Cursor or any MCP client as a custom connector, approve only the permissions you want, and disconnect it at any time.
+main: prose
+updated: 2026-11-24
+---
+
+<h1>Connect your AI assistant to 2earl</h1>
+<p class="lede">
+  The 2earl MCP gateway lets Claude, ChatGPT, Cursor and other assistants that speak the Model
+  Context Protocol use 2earl services for you, with only the permissions you approve.
+</p>
+
+<h2 id="add">Add it in three steps</h2>
+<ol>
+  <li>
+    In your assistant, add a custom connector (some call it an MCP server) with this address:
+    <code>https://mcp.2earl.com/mcp</code>. In Claude:
+    <strong>Settings → Connectors → Add custom connector</strong>.
+  </li>
+  <li>
+    Your assistant opens login.2earl.com. Sign in with your 2earl account and tick what it may do.
+  </li>
+  <li>Ask for what you need, in your own words. The assistant picks the right tool.</li>
+</ol>
+<p>
+  For Prompt share alone, use <code>https://mcp.2earl.com/promptshare</code> instead: the assistant
+  then sees only Prompt share’s tools.
+</p>
+
+<h2 id="permissions">Permissions you control</h2>
+<p>
+  Each 2earl service has its own permissions, and you approve them one by one when you connect. For
+  Prompt share they are:
+</p>
+<ul>
+  <li><strong>Read</strong>: your prompts, prompts shared with you, and public prompts.</li>
+  <li><strong>Write</strong>: create, change and delete your own prompts.</li>
+  <li><strong>Sessions</strong>: save to and read your shared sessions.</li>
+</ul>
+<p>
+  Making a prompt public, sharing it and inviting people are only possible on the website, never
+  through an assistant. You see every connected assistant in
+  <a href="https://login.2earl.com/account">your 2earl account</a>, and disconnecting one ends its
+  access within about a minute.
+</p>
+
+<h2 id="examples">What you can ask</h2>
+<ul>
+  <li>
+    “Save this as a prompt called Code review.” Later, in any assistant: “Use my Code review prompt
+    on this diff.”
+  </li>
+  <li>
+    “Create a session called Trip planning and write a brief.” Later, in another chat: “Load my Trip
+    planning session. What’s still open?”
+  </li>
+  <li>“Find public prompts for meeting notes and copy the best one to my prompts.”</li>
+</ul>
+
+<h2 id="privacy">What the gateway keeps</h2>
+<p>
+  The gateway checks each request’s access and passes it to the service with your internal user ID
+  and the permissions you approved, never your email address or name. It keeps a security log of
+  which tool was used and whether it worked, not what you asked or what came back. Details are in
+  the <a href="/privacy#gateway">privacy policy</a>.
+</p>
+
+<h2 id="trouble">If something doesn’t work</h2>
+<ul>
+  <li>
+    <strong>New tools don’t appear:</strong> disconnect and connect again; assistants keep the list
+    of tools from when you connected.
+  </li>
+  <li>
+    <strong>“This app hasn’t been allowed to do this”:</strong> you didn’t tick that permission.
+    Connect again and tick it.
+  </li>
+  <li>
+    <strong>Sign-in asks again and again:</strong> allow cookies for login.2earl.com, then try
+    again.
+  </li>
+</ul>
+<p>Read more about <a href="/promptshare">Prompt share</a>.</p>
