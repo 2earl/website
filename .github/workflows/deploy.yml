@@ -48,7 +48,7 @@ jobs:
 
       - name: Smoke test
         run: |
-          for path in / /privacy /terms /imprint /security /dpa /tr /tr/privacy /tr/terms /tr/imprint /tr/security /tr/dpa /sitemap.xml /robots.txt; do
+          for path in / /mcp /promptshare /privacy /terms /imprint /security /dpa /tr /tr/mcp /tr/promptshare /tr/privacy /tr/terms /tr/imprint /tr/security /tr/dpa /sitemap.xml /robots.txt /og-en.png /og-tr.png; do
             ok=0
             for i in 1 2 3 4 5 6; do
               if curl -fsS --max-time 10 -o /dev/null "https://2earl.com${path}"; then ok=1; break; fi

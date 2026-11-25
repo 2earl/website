@@ -31,7 +31,8 @@ pnpm lint    # pages up to date, HTML validation, formatting, internal link chec
   `public/sitemap.xml` with every translation. Edit `src/`, never the generated `public/*.html`.
 
 **Adding a language:** add it to `LOCALES` in `src/site.mjs`, copy `src/pages/en/` to
-`src/pages/<code>/`, translate, `pnpm build:pages`. Lint fails while a page is missing.
+`src/pages/<code>/`, translate, add a 1200×630 preview image `public/og-<code>.png`,
+`pnpm build:pages`. Lint fails while a page is missing.
 
 Response headers (CSP and others) are in `public/_headers`. HSTS is set for the whole zone in
 `2earl/login` `infra/zone.tf`.

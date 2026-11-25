@@ -109,7 +109,12 @@ function seo(locale, page, meta) {
     ...LOCALES.filter((l) => l !== locale).map(
       (l) => `<meta property="og:locale:alternate" content="${l.ogLocale}" />`,
     ),
-    '<meta name="twitter:card" content="summary" />',
+    // A preview image per language (public/og-<code>.png, 1200×630).
+    `<meta property="og:image" content="${ORIGIN}/og-${locale.code}.png" />`,
+    '<meta property="og:image:width" content="1200" />',
+    '<meta property="og:image:height" content="630" />',
+    `<meta property="og:image:alt" content="${escape(locale.words.ogAlt)}" />`,
+    '<meta name="twitter:card" content="summary_large_image" />',
   ];
   return lines.join('\n');
 }

@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Yapay zekâ asistanınızı 2earl’e bağlayın · MCP</title>
+    <meta
+      name="description"
+      content="2earl’ü Claude, ChatGPT, Cursor ya da herhangi bir MCP istemcisine özel bağlayıcı olarak ekleyin, yalnızca istediğiniz izinleri onaylayın ve bağlantıyı istediğiniz zaman kesin."
+    />
+    <meta name="theme-color" content="#f7f7f8" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#141315" media="(prefers-color-scheme: dark)" />
+    <link rel="canonical" href="https://2earl.com/tr/mcp" />
+    <link rel="alternate" hreflang="en" href="https://2earl.com/mcp" />
+    <link rel="alternate" hreflang="tr" href="https://2earl.com/tr/mcp" />
+    <link rel="alternate" hreflang="x-default" href="https://2earl.com/mcp" />
+    <meta property="og:site_name" content="2earl" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Yapay zekâ asistanınızı 2earl’e bağlayın · MCP" />
+    <meta
+      property="og:description"
+      content="2earl’ü Claude, ChatGPT, Cursor ya da herhangi bir MCP istemcisine özel bağlayıcı olarak ekleyin, yalnızca istediğiniz izinleri onaylayın ve bağlantıyı istediğiniz zaman kesin."
+    />
+    <meta property="og:url" content="https://2earl.com/tr/mcp" />
+    <meta property="og:locale" content="tr_TR" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="og:image" content="https://2earl.com/og-tr.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="2earl: Sizin adınıza hangi uygulamaların çalışacağına siz karar verin. Her 2earl hizmeti için tek hesap."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link
+      rel="preload"
+      href="/fonts/readex-pro-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="site">
+        <a class="brand" href="/tr"
+          ><svg viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+            <path fill="#F15A24" d="M0 0 50 50V100L0 50Z" />
+            <path fill="#F7931E" d="M100 0 50 50V100L100 50Z" />
+            <path fill="#ED1C24" d="M0 50 50 100H15A15 15 0 0 1 0 85Z" />
+            <path fill="#FBB03B" d="M100 50V85A15 15 0 0 1 85 100H50Z" /></svg
+          ><span class="brand-name">2earl</span></a
+        >
+        <div class="header-actions">
+          <nav class="languages" aria-label="Dil">
+            <a href="/mcp" hreflang="en" lang="en">English</a
+            ><a href="/tr/mcp" lang="tr" aria-current="true">Türkçe</a>
+          </nav>
+          <a class="header-action" href="https://login.2earl.com/?lang=tr">Giriş yap</a>
+        </div>
+      </header>
+      <main class="main prose">
+        <h1>Yapay zekâ asistanınızı 2earl’e bağlayın</h1>
+        <p class="lede">
+          2earl MCP ağ geçidi; Claude, ChatGPT, Cursor ve Model Context Protocol’ü (MCP) destekleyen
+          diğer asistanların 2earl hizmetlerini, yalnızca onayladığınız izinlerle sizin için
+          kullanmasını sağlar.
+        </p>
+
+        <h2 id="add">Üç adımda ekleyin</h2>
+        <ol>
+          <li>
+            Asistanınızda şu adresle özel bir bağlayıcı (bazıları MCP sunucusu der) ekleyin:
+            <code>https://mcp.2earl.com/mcp</code>. Claude’da:
+            <strong>Settings → Connectors → Add custom connector</strong>.
+          </li>
+          <li>
+            Asistanınız login.2earl.com’u açar. 2earl hesabınızla giriş yapın ve neler
+            yapabileceğini işaretleyin.
+          </li>
+          <li>İhtiyacınızı kendi sözlerinizle isteyin. Asistan doğru aracı seçer.</li>
+        </ol>
+        <p>
+          Yalnızca Prompt share için bunun yerine
+          <code>https://mcp.2earl.com/promptshare</code> adresini kullanın: asistan o zaman yalnızca
+          Prompt share’in araçlarını görür.
+        </p>
+
+        <h2 id="permissions">İzinler sizin kontrolünüzde</h2>
+        <p>
+          Her 2earl hizmetinin kendi izinleri vardır ve bağlanırken onları tek tek onaylarsınız.
+          Prompt share için bunlar:
+        </p>
+        <ul>
+          <li>
+            <strong>Okuma</strong>: prompt’larınız, sizinle paylaşılan prompt’lar ve herkese açık
+            prompt’lar.
+          </li>
+          <li><strong>Yazma</strong>: kendi prompt’larınızı oluşturma, değiştirme ve silme.</li>
+          <li><strong>Oturumlar</strong>: paylaşılan oturumlarınıza kaydetme ve onları okuma.</li>
+        </ul>
+        <p>
+          Bir prompt’u herkese açık yapmak, paylaşmak ve kişileri davet etmek yalnızca web sitesinde
+          mümkündür, asla bir asistan üzerinden değil. Bağlı her asistanı
+          <a href="https://login.2earl.com/account?lang=tr">2earl hesabınızda</a> görürsünüz;
+          birinin bağlantısını kesmek erişimini yaklaşık bir dakika içinde sona erdirir.
+        </p>
+
+        <h2 id="examples">Neler isteyebilirsiniz</h2>
+        <ul>
+          <li>
+            “Bunu Code review adında bir prompt olarak kaydet.” Daha sonra herhangi bir asistanda:
+            “Code review prompt’umu bu diff üzerinde kullan.”
+          </li>
+          <li>
+            “Gezi planı adında bir oturum oluştur ve bir özet yaz.” Daha sonra başka bir sohbette:
+            “Gezi planı oturumumu yükle. Hâlâ açık olan ne var?”
+          </li>
+          <li>
+            “Toplantı notları için herkese açık prompt’ları bul ve en iyisini prompt’larıma
+            kopyala.”
+          </li>
+        </ul>
+
+        <h2 id="privacy">Ağ geçidi neleri saklar</h2>
+        <p>
+          Ağ geçidi her isteğin erişimini denetler ve isteği hizmete dahili kullanıcı kimliğinizle
+          ve onayladığınız izinlerle iletir; e-posta adresinizi ya da adınızı asla iletmez. Hangi
+          aracın kullanıldığını ve başarılı olup olmadığını gösteren bir güvenlik kaydı tutar; ne
+          sorduğunuzu ya da ne yanıt geldiğini tutmaz. Ayrıntılar
+          <a href="/tr/privacy#gateway">gizlilik politikasında</a>.
+        </p>
+
+        <h2 id="trouble">Bir şey çalışmazsa</h2>
+        <ul>
+          <li>
+            <strong>Yeni araçlar görünmüyor:</strong> bağlantıyı kesip yeniden bağlanın; asistanlar
+            araç listesini bağlandığınız andaki haliyle tutar.
+          </li>
+          <li>
+            <strong>“Bu uygulamanın bunu yapmasına izin verilmedi”:</strong> o izni işaretlemediniz.
+            Yeniden bağlanın ve işaretleyin.
+          </li>
+          <li>
+            <strong>Giriş tekrar tekrar soruluyor:</strong> login.2earl.com için çerezlere izin
+            verin, sonra yeniden deneyin.
+          </li>
+        </ul>
+        <p><a href="/tr/promptshare">Prompt share</a> hakkında daha fazlasını okuyun.</p>
+      </main>
+      <footer class="site">
+        <nav aria-label="Hukuki bilgiler">
+          <a href="/tr/privacy">Gizlilik politikası</a><a href="/tr/terms">Kullanım koşulları</a
+          ><a href="/tr/imprint">Künye</a><a href="/tr/security">Güvenlik</a>
+        </nav>
+        <p>2earl · Berlin</p>
+      </footer>
+    </div>
+  </body>
+</html>

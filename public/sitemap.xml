@@ -15,6 +15,34 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://2earl.com/" />
   </url>
   <url>
+    <loc>https://2earl.com/mcp</loc>
+    <lastmod>2026-11-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://2earl.com/mcp" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://2earl.com/tr/mcp" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://2earl.com/mcp" />
+  </url>
+  <url>
+    <loc>https://2earl.com/tr/mcp</loc>
+    <lastmod>2026-11-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://2earl.com/mcp" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://2earl.com/tr/mcp" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://2earl.com/mcp" />
+  </url>
+  <url>
+    <loc>https://2earl.com/promptshare</loc>
+    <lastmod>2026-11-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://2earl.com/promptshare" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://2earl.com/tr/promptshare" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://2earl.com/promptshare" />
+  </url>
+  <url>
+    <loc>https://2earl.com/tr/promptshare</loc>
+    <lastmod>2026-11-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://2earl.com/promptshare" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://2earl.com/tr/promptshare" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://2earl.com/promptshare" />
+  </url>
+  <url>
     <loc>https://2earl.com/privacy</loc>
     <lastmod>2026-11-24</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://2earl.com/privacy" />
