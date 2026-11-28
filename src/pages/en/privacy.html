@@ -3,11 +3,11 @@ title: Privacy policy · 2earl
 description: How 2earl handles personal data on 2earl.com, login.2earl.com, mcp.2earl.com and promptshare.cc.
 main: prose
 section: legal
-updated: 2026-11-24
+updated: 2026-11-28
 ---
 
 <h1>Privacy policy</h1>
-<p class="meta">Last updated: 24 November 2026</p>
+<p class="meta">Last updated: 28 November 2026</p>
 <nav class="toc" aria-labelledby="toc-heading">
   <h2 id="toc-heading">On this page</h2>
   <ol>
@@ -234,6 +234,35 @@ updated: 2026-11-24
     open or the organization manages the domain. We keep its answer only until the sign-in finishes,
     for 10 minutes at most.
   </li>
+  <li>
+    Owners and admins can give members roles in 2earl’s apps (for example Emanet), to one person or
+    to a group the organization makes, and can define the organization’s own roles. For each role
+    given we store who holds it, the role, who gave it and when, the reason they typed, and, if they
+    set them, an end date and conditions: a recent second factor, a managed account, the
+    organization’s networks or certain hours. To check a network condition the app tells us the
+    request’s address; we compare it and don’t store it. Apps learn only what the person may do,
+    never the reason. Members see their own roles; owners, admins and auditors see everyone’s, and
+    where each permission comes from.
+  </li>
+  <li>
+    A member can ask for a role for up to 30 days, with a reason. Owners and admins who could give
+    it see the request with the member’s name and email address, and approve or deny it. A request
+    nobody decides lapses after 7 days; leaving the organization withdraws it.
+  </li>
+  <li>
+    An owner can start an access review: owners and admins go through every role given in the
+    organization and keep or remove each one. The review records who held which role (by account
+    ID), the decision, and who decided and when, and can be downloaded.
+  </li>
+  <li>
+    Owners can create service accounts, so the organization’s own servers can call a 2earl app. We
+    store the service account’s name, the app and permissions, a hashed secret or public key, who
+    made it and when it was last used. A service account holds only the roles given to it.
+  </li>
+  <li>
+    When you sign in to a 2earl app on behalf of an organization, the app’s token names that
+    organization, and only if you are its member.
+  </li>
 </ul>
 <p>
   2earl staff (the operator, and admins and support people the operator names, each bound to
@@ -241,6 +270,9 @@ updated: 2026-11-24
   addresses, sign-in methods, members, invitations, domains and recent activity. When staff open an
   organization’s details, its activity shows that 2earl did, without naming the staff member.
   Support can sign an account out everywhere, for example after a lost device; we then email you.
+  Inside 2earl’s apps, staff see an organization’s data only if an owner lets them in: for one app,
+  read-only, for up to 72 hours, with a reason. The owner can end it at any time, and each time
+  staff look the organization’s activity shows it.
 </p>
 <p>
   <strong>Legal basis:</strong> Art. 6(1)(b) GDPR for the organizations you create or join. For the
@@ -536,6 +568,33 @@ updated: 2026-11-24
       <tr>
         <td>Records and groups an organization’s directory sent</td>
         <td>Until the directory removes the person, or the organization is deleted</td>
+      </tr>
+      <tr>
+        <td>Roles given in 2earl’s apps</td>
+        <td>
+          Until the end date or until withdrawn, or until the person leaves the organization or
+          deletes their account
+        </td>
+      </tr>
+      <tr>
+        <td>Groups an organization makes</td>
+        <td>Until deleted, or the organization is deleted; you leave them when you leave it</td>
+      </tr>
+      <tr>
+        <td>Requests for a role</td>
+        <td>90 days after they are decided, withdrawn or lapse</td>
+      </tr>
+      <tr>
+        <td>Letting 2earl staff into an app</td>
+        <td>90 days after it ends</td>
+      </tr>
+      <tr>
+        <td>Access reviews</td>
+        <td>1 year after the review is finished</td>
+      </tr>
+      <tr>
+        <td>Service accounts</td>
+        <td>Until an owner deletes them, or the organization is deleted</td>
       </tr>
       <tr>
         <td>Organization invitations (the invited address)</td>

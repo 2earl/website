@@ -3,11 +3,11 @@ title: Gizlilik politikası · 2earl
 description: 2earl’ün 2earl.com, login.2earl.com, mcp.2earl.com ve promptshare.cc’de kişisel verileri nasıl işlediği.
 main: prose
 section: legal
-updated: 2026-11-24
+updated: 2026-11-28
 ---
 
 <h1>Gizlilik politikası</h1>
-<p class="meta">Son güncelleme: 24 Kasım 2026</p>
+<p class="meta">Son güncelleme: 28 Kasım 2026</p>
 <p class="meta">
   Bu metin İngilizce aslının çevirisidir. Aralarında bir fark olursa
   <a href="https://2earl.com/privacy" hreflang="en">İngilizce metin</a> esas alınır.
@@ -242,6 +242,37 @@ updated: 2026-11-24
     adını yönetiyorsa bir hesap oluştururuz. Yanıtını yalnızca giriş tamamlanana kadar, en fazla 10
     dakika saklarız.
   </li>
+  <li>
+    Sahipler ve yöneticiler üyelere 2earl’ün uygulamalarında (ör. Emanet) rol verebilir: tek bir
+    kişiye ya da kurumun oluşturduğu bir gruba. Kurumun kendi rollerini de tanımlayabilirler.
+    Verilen her rol için rolü kimin taşıdığını, rolü, kimin ne zaman verdiğini, yazdığı gerekçeyi ve
+    belirlendiyse bir bitiş tarihini ve koşulları saklarız: yakın zamanda yapılmış ikinci adım,
+    yönetilen hesap, kurumun ağları ya da belirli saatler. Ağ koşulunu denetlemek için uygulama bize
+    isteğin adresini bildirir; adresi karşılaştırırız, saklamayız. Uygulamalar yalnızca kişinin ne
+    yapabileceğini öğrenir, gerekçeyi asla. Üyeler kendi rollerini görür; sahipler, yöneticiler ve
+    denetçiler herkesinkini ve her iznin nereden geldiğini görür.
+  </li>
+  <li>
+    Bir üye, gerekçesini yazarak en fazla 30 günlüğüne bir rol isteyebilir. O rolü kendisi
+    verebilecek sahipler ve yöneticiler isteği üyenin adı ve e-posta adresiyle görür, onaylar ya da
+    reddeder. Kimsenin karar vermediği bir istek 7 gün sonra düşer; kurumdan ayrılmak isteği geri
+    çeker.
+  </li>
+  <li>
+    Bir sahip erişim gözden geçirmesi başlatabilir: sahipler ve yöneticiler kurumda verilmiş her
+    rolü tek tek inceleyip tutar ya da kaldırır. Gözden geçirme kimin hangi rolü taşıdığını (hesap
+    kimliğiyle), kararı, kimin ne zaman karar verdiğini kaydeder ve indirilebilir.
+  </li>
+  <li>
+    Sahipler, kurumun kendi sunucularının bir 2earl uygulamasını çağırabilmesi için hizmet hesapları
+    oluşturabilir. Hizmet hesabının adını, uygulamayı ve izinleri, karma (hash) olarak bir gizli
+    anahtarı ya da açık anahtarı, kimin oluşturduğunu ve en son ne zaman kullanıldığını saklarız.
+    Bir hizmet hesabı yalnızca kendisine verilen rolleri taşır.
+  </li>
+  <li>
+    Bir 2earl uygulamasına bir kurum adına giriş yaptığınızda, uygulamanın jetonu o kurumu belirtir;
+    bunu yalnızca kurumun üyesiyseniz yapar.
+  </li>
 </ul>
 <p>
   2earl ekibi (işletmeci ve işletmecinin belirlediği, her biri gizlilik yükümlülüğü altındaki
@@ -249,7 +280,10 @@ updated: 2026-11-24
   görebilir: adlar, adresler, giriş yöntemleri, üyeler, davetler, alan adları ve son etkinlikler.
   Ekip bir kurumun ayrıntılarını açtığında, kurumun etkinlik kaydında bunu 2earl’ün yaptığı, ekip
   üyesinin adı verilmeden görünür. Destek ekibi bir hesabın tüm oturumlarını kapatabilir, örneğin
-  kaybolan bir cihazdan sonra; bu durumda size e-posta göndeririz.
+  kaybolan bir cihazdan sonra; bu durumda size e-posta göndeririz. 2earl’ün uygulamalarının içinde
+  ise ekip bir kurumun verilerini yalnızca bir sahip izin verirse görür: tek bir uygulamada,
+  yalnızca okuma yetkisiyle, en fazla 72 saat ve bir gerekçeyle. Sahip bu izni istediği an
+  bitirebilir; ekip her baktığında bu, kurumun etkinlik kaydında görünür.
 </p>
 <p>
   <strong>Hukuki dayanak:</strong> Oluşturduğunuz ya da katıldığınız kurumlar için GDPR madde
@@ -553,6 +587,33 @@ updated: 2026-11-24
       <tr>
         <td>Bir kurumun dizininin gönderdiği kayıtlar ve gruplar</td>
         <td>Dizin kişiyi kaldırana ya da kurum silinene kadar</td>
+      </tr>
+      <tr>
+        <td>2earl’ün uygulamalarında verilen roller</td>
+        <td>
+          Bitiş tarihine ya da geri alınana kadar, veya kişi kurumdan ayrılana ya da hesabını silene
+          kadar
+        </td>
+      </tr>
+      <tr>
+        <td>Bir kurumun oluşturduğu gruplar</td>
+        <td>Silinene ya da kurum silinene kadar; kurumdan ayrılınca gruplardan da çıkarsınız</td>
+      </tr>
+      <tr>
+        <td>Rol istekleri</td>
+        <td>Karar verildikten, geri çekildikten ya da düştükten 90 gün sonrasına kadar</td>
+      </tr>
+      <tr>
+        <td>2earl ekibine bir uygulamada verilen izin</td>
+        <td>İzin bittikten 90 gün sonrasına kadar</td>
+      </tr>
+      <tr>
+        <td>Erişim gözden geçirmeleri</td>
+        <td>Gözden geçirme bittikten 1 yıl sonrasına kadar</td>
+      </tr>
+      <tr>
+        <td>Hizmet hesapları</td>
+        <td>Bir sahip silene ya da kurum silinene kadar</td>
       </tr>
       <tr>
         <td>Kurum davetleri (davet edilen adres)</td>
